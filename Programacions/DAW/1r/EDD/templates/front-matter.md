@@ -1,7 +1,7 @@
 ---
-title: Projecte Curricular del Cicle Formatiu \newline Desenvolupament d'Aplicacions Multiplataforma
+title: Programació Didàctica \newline Entorns de Desenvolupament
 titlepage: true
-subtitle: PCCF DAM
+subtitle: PD EDD
 author:
   - Autor 1
   - Autor 2

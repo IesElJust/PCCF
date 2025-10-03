@@ -1,10 +1,16 @@
 ---
-title: Projecte Curricular del Cicle Formatiu \newline Desenvolupament d'Aplicacions Multiplataforma
+title: Programació Didàctica \newline Sostenibilitat Aplicada al Sector Productiu
 titlepage: true
-subtitle: PCCF DAM
+subtitle: PD Sostenibilitat
 author:
-  - Autor 1
-  - Autor 2
+  - Sergi Moreno Sarrión
+  - José Antonio Sanchéz Bonache
+  - Esperanza Micó Mendez
+  - Celia Goméz Serra
+  - José Alfredo Murcia Andrés
+  - Josep Magraner Ramón
+  - David Molina Fernández
+  - Guillermo Vidal Frasquet
 lang: ca
 toc: true
 toc-own-page: true
@@ -14,7 +20,7 @@ titlepage-rule-height: 0
 titlepage-text-color: "F08A2A"
 titlepage-background: "templates/img/portada.png"
 page-background: "templates/img/fondo.png"
-header-left: Departament d'Informàtica. Curs 2024-2025
+header-left: Departament d'Informàtica. Curs 2025-2026
 footer-left: IES Jaume II el Just. PCCF
 #footer-right: \thepage/\pageref{LastPage}
 #footer-right: \thepage/\pageref{LastPage}

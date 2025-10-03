@@ -1,10 +1,10 @@
 ---
-title: Projecte Curricular del Cicle Formatiu \newline Desenvolupament d'Aplicacions Multiplataforma
+title: Programació Didàctica \newline Programació de Serveis i Processos
 titlepage: true
-subtitle: PCCF DAM
+subtitle: PD PSP
 author:
-  - Autor 1
-  - Autor 2
+  - José A. Múrcia
+  - Jorge Molió
 lang: ca
 toc: true
 toc-own-page: true

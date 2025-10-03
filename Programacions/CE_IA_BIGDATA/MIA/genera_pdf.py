@@ -96,6 +96,7 @@ def generate_pdf(output_pdf="output.pdf", keep_html=False):
         print(f"Fitxer temporal {temp_markdown} eliminat.")
 
 if __name__ == "__main__":
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     # Opcional: passar el nom del fitxer PDF de sortida i controlar si mantenir el fitxer HTML temporal
     output_pdf = "output.pdf"
     keep_html = "--keep-html" in sys.argv
