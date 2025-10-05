@@ -33,6 +33,7 @@ __pycache__/
 *.pdf
 # Excepte els de la carpeta PDFs
 !PDFs/
+!PDFs/**/*.pdf
 
 # Fitxers temporals de test o generació automàtica
 output*
