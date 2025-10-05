@@ -31,6 +31,8 @@ __pycache__/
 
 # Fitxers PDF generats
 *.pdf
+# Excepte els de la carpeta PDFs
+!PDFs/
 
 # Fitxers temporals de test o generació automàtica
 output*
