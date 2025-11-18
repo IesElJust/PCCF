@@ -12,7 +12,7 @@ else
 fi
 
 # Recórrer tots els fitxers 'genera_pdf.py'
-for i in `find . -name genera_pdf.py`; do
+for i in `find . -name genera_pdf.py | grep PMDM`; do
     dir_name=$(dirname $i)
     folder_name="${dir_name##*/}"
     output_file="${folder_name}.pdf"

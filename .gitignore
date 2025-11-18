@@ -43,3 +43,4 @@ temp.*
 
 # Altres directoris que només s'usen localment
 pdf-images/
+Programacions/**/*.pdf

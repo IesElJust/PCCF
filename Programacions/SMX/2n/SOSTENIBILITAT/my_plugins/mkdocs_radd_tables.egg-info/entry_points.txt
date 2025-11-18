@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+add_tables = add_tables:AddTablesPlugin
