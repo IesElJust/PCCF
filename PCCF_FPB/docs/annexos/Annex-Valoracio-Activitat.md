@@ -1,19 +1,19 @@
-## Annex. Fitxa de valoració d’activitat complementària o extraescolar
+## Annex. Fitxa de valoració d'activitat complementària o extraescolar
 
-**Títol de l’activitat:** ______________________________________  
+**Títol de l'activitat:** ______________________________________  
 **Data de realització:** ____ / ____ / ______  
 **Professor/a responsable:** __________________________  
 **Grup/s participants:** ________________________
 
 ### 1. Valoració del desenvolupament
 
-- Assistència i participació de l’alumnat:  
+- Assistència i participació de l'alumnat:  
   ☐ Molt alta  ☐ Alta  ☐ Mitjana  ☐ Baixa
 
 - Compliment dels objectius educatius:  
   ☐ Totalment  ☐ Parcialment  ☐ Poc  ☐ Gens
 
-- Interés i motivació de l’alumnat:  
+- Interés i motivació de l'alumnat:  
   ☐ Molt alta  ☐ Alta  ☐ Mitjana  ☐ Baixa
 
 ### 2. Valoració metodològica i organitzativa

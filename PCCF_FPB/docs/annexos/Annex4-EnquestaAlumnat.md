@@ -2,7 +2,7 @@
 
 **Anònima – només per a ús intern del centre**
 
-## 1. Com valores l’ajuda que t’ha donat el teu tutor/a aquest curs?
+## 1. Com valores l'ajuda que t'ha donat el teu tutor/a aquest curs?
 ☐ Molt útil  
 ☐ Útil  
 ☐ Poc útil  
@@ -19,7 +19,7 @@
 - Parlar del teu futur acadèmic o laboral: ☐ Sí ☐ No
 - Millorar com a estudiant: ☐ Sí ☐ No
 
-## 4. Quines activitats t’han agradat més?  
+## 4. Quines activitats t'han agradat més?  
 _____________________________________________________
 
 ## 5. Propostes de millora per al curs vinent:

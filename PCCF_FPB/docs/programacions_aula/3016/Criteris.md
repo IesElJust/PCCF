@@ -1,6 +1,6 @@
-# 📋 Criteris d’avaluació
+# 📋 Criteris d'avaluació
 
-## ✔️ Criteris d’avaluació associats als Resultats d’aprenentatge:
+## ✔️ Criteris d'avaluació associats als Resultats d'aprenentatge:
 
 ??? note "RA1. Selecciona els elements que configuren les xarxes per a la transmissió de veu i dades, descrivint-ne les principals característiques i funcionalitat."
     **Criteris d'avaluació:**  
@@ -22,7 +22,7 @@
      **g)** S'han muntat canalitzacions, caixes i tubs, entre altres, assegurant la seua fixació mecànica.  
      **h)** S'han aplicat normes de seguretat en l'ús d'eines i sistemes.  
 
-??? note "RA3. Desplega el cablejat d’una xarxa de veu i dades analitzant el seu traçat"
+??? note "RA3. Desplega el cablejat d'una xarxa de veu i dades analitzant el seu traçat"
     **Criteris d'avaluació:**  
      **a)** S'han diferenciat els mitjans de transmissió emprats per a veu i dades.  
      **b)** S'han reconegut els detalls del cablejat de la instal·lació i el seu desplegament (categoria del cablejat, espais per on discorre, suport per a les canalitzacions, entre altres).  
@@ -69,9 +69,9 @@
 
 ###  **Criteris d'avaluació associats a la situació plantejada**
 
-L’avaluació de la SA1 es centra en la comprovació de l’assoliment dels resultats d’aprenentatge mitjançant evidències reals, contextualitzades i observables. Es posa l’accent en el **procés** tant com en el **producte final**, valorant el desenvolupament de competències tècniques i transversals.
+L'avaluació de la SA1 es centra en la comprovació de l'assoliment dels resultats d'aprenentatge mitjançant evidències reals, contextualitzades i observables. Es posa l'accent en el **procés** tant com en el **producte final**, valorant el desenvolupament de competències tècniques i transversals.
 
 
-> 📌 Aquesta situació d’aprenentatge afavoreix l’adquisició de competències tècniques essencials en el sector de les telecomunicacions, mitjançant una experiència pràctica amb impacte positiu en l’entorn educatiu.
+> 📌 Aquesta situació d'aprenentatge afavoreix l'adquisició de competències tècniques essencials en el sector de les telecomunicacions, mitjançant una experiència pràctica amb impacte positiu en l'entorn educatiu.
 >
 ---

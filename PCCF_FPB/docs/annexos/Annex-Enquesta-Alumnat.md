@@ -24,9 +24,9 @@
 - Has rebut ajuda quan l'has necessitada?  
   ☐ Sempre   ☐ A vegades   ☐ Mai
 
-### 3. Sobre l’ambient d’aula
+### 3. Sobre l'ambient d'aula
 
-- T’has sentit còmode treballant en classe?  
+- T'has sentit còmode treballant en classe?  
   ☐ Sí   ☐ A vegades   ☐ No
 
 - Hi havia bon ambient i respecte entre companys/es:  

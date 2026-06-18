@@ -1,8 +1,8 @@
-# Annex 1. Model d’entrevista individual de tutoria
+# Annex 1. Model d'entrevista individual de tutoria
 
-**Nom de l’alumne/a:** ______________________  
+**Nom de l'alumne/a:** ______________________  
 **Grup:** __________  
-**Data de l’entrevista:** ____ / ____ / _______  
+**Data de l'entrevista:** ____ / ____ / _______  
 **Tutor/a:** ______________________  
 
 ## 1. Situació acadèmica actual
@@ -17,7 +17,7 @@
 
 ## 3. Motivació i actitud
 - Et sents motivat/da amb el cicle? ☐ Sí   ☐ No  
-- En què t’agradaria millorar?
+- En què t'agradaria millorar?
 
 ## 4. Objectius personals i acadèmics
 - Tens algun objectiu concret per a aquest curs?  

@@ -1,8 +1,8 @@
 # :school: Situacions d'Aprenentatge
 
-<!-- ## :triangular_ruler: **Elements integrats en les Situacions d’Aprenentatge** -->
+<!-- ## :triangular_ruler: **Elements integrats en les Situacions d'Aprenentatge** -->
 <!-- 
-Per planificar de manera efectiva les Situacions d’Aprenentatge (SA), les programacions d’aula han d’integrar diversos elements que asseguren la seua alineació amb els objectius formatius i les necessitats educatives de l’alumnat. A continuació es presenten els punts clau a tindre en compte durant el disseny i desenvolupament de les SA:
+Per planificar de manera efectiva les Situacions d'Aprenentatge (SA), les programacions d'aula han d'integrar diversos elements que asseguren la seua alineació amb els objectius formatius i les necessitats educatives de l'alumnat. A continuació es presenten els punts clau a tindre en compte durant el disseny i desenvolupament de les SA:
  -->
 
 
@@ -10,11 +10,11 @@ Per planificar de manera efectiva les Situacions d’Aprenentatge (SA), les prog
 <!-- ### **Estratègia**
 
 ??? success "Temporització"
-    Aquesta Situació d’Aprenentatge es desenvoluparà al llarg de **tot el curs acadèmic**, distribuïda en **tres avaluacions**. Com que les necessitats del centre poden variar, es realitzarà una detecció inicial per prioritzar les intervencions, centrant-se en:
+    Aquesta Situació d'Aprenentatge es desenvoluparà al llarg de **tot el curs acadèmic**, distribuïda en **tres avaluacions**. Com que les necessitats del centre poden variar, es realitzarà una detecció inicial per prioritzar les intervencions, centrant-se en:
     
     - Cablejat de dos aules.
-    - Instal·lació de fibra òptica fins a l’aula de classe.
-    - Muntatge d’un rack i organització d’equipament.
+    - Instal·lació de fibra òptica fins a l'aula de classe.
+    - Muntatge d'un rack i organització d'equipament.
     - Instal·lació de canalitzacions i rosetes de xarxa.
     - Crimpat de cables i configuració bàsica de la xarxa.
 
@@ -25,31 +25,31 @@ Per planificar de manera efectiva les Situacions d’Aprenentatge (SA), les prog
 
 ??? success "Metodologia"
      
-    L’aprenentatge es basarà en un **enfocament pràctic i competencial**, amb una combinació de:
+    L'aprenentatge es basarà en un **enfocament pràctic i competencial**, amb una combinació de:
     
-    - **Aprenentatge Basat en Projectes (ABP)**: L’alumnat treballarà en un projecte real d’instal·lació i configuració de xarxes en el centre.
-    - **Aprenentatge Servei (ApS)**: L’aula es convertirà en un espai de servei actiu per a millorar la infraestructura del centre.
-    - **Treball cooperatiu**: Formació d’equips de treball amb rols definits per fomentar la col·laboració.
-    - **Gamificació**: Reconeixement d’assoliments per fites aconseguides en el projecte.
+    - **Aprenentatge Basat en Projectes (ABP)**: L'alumnat treballarà en un projecte real d'instal·lació i configuració de xarxes en el centre.
+    - **Aprenentatge Servei (ApS)**: L'aula es convertirà en un espai de servei actiu per a millorar la infraestructura del centre.
+    - **Treball cooperatiu**: Formació d'equips de treball amb rols definits per fomentar la col·laboració.
+    - **Gamificació**: Reconeixement d'assoliments per fites aconseguides en el projecte.
 
-??? success "Mesures d’atenció per a la inclusió"
-    S’aplicaran estratègies del **Disseny Universal per a l’Aprenentatge (DUA)** per assegurar la inclusió de tot l’alumnat:
+??? success "Mesures d'atenció per a la inclusió"
+    S'aplicaran estratègies del **Disseny Universal per a l'Aprenentatge (DUA)** per assegurar la inclusió de tot l'alumnat:
     
     - **Compromís**:
         - Metodologies actives i participatives per mantenir la motivació.
-        - Establiment de fites i reconeixements per l’assoliment d’objectius.
+        - Establiment de fites i reconeixements per l'assoliment d'objectius.
     - **Representació**:  
         - Suport multimodal (vídeos, esquemes, guies visuals) per a facilitar la comprensió.
-        - Sessions de reforç individualitzades per a l’alumnat amb dificultats.
+        - Sessions de reforç individualitzades per a l'alumnat amb dificultats.
     - **Acció**:  
-        - Diversificació de les formes d’avaluació (observació, autoavaluació, coavaluació).
-        - Pràctiques adaptades segons el nivell d’habilitat tècnica de cada alumne/a.
+        - Diversificació de les formes d'avaluació (observació, autoavaluació, coavaluació).
+        - Pràctiques adaptades segons el nivell d'habilitat tècnica de cada alumne/a.
 
 ??? success "Recursos i tasques"
     - **Recursos disponibles**: Aula-taller de xarxes, programari de simulació, eines de mesura i muntatge.
     - **Tasques assignades**:
-        - Creació d’un pla de xarxa i selecció de materials.
-        - Instal·lació física de cablejat i muntatge d’armaris de comunicació.
+        - Creació d'un pla de xarxa i selecció de materials.
+        - Instal·lació física de cablejat i muntatge d'armaris de comunicació.
         - Configuració de dispositius de xarxa i comprovació de connectivitat.
         - Elaboració de documentació tècnica i presentació de resultats.
 
@@ -57,7 +57,7 @@ Per planificar de manera efectiva les Situacions d’Aprenentatge (SA), les prog
     - **Físics**: Aules del centre, sales del centre on es realitzaran les instal·lacions.
     - **Virtuals**: Entorn Aules, ús de simuladors en línia.
 
-??? success "Organització de l’espai d’aprenentatge"
+??? success "Organització de l'espai d'aprenentatge"
     - **Aula taller**: Aula transformadora. Espai central per a la teoria i la pràctica de crimpat, un espai per a ordinadors i una pared per a diverses pràctiques.
     - **Instal·lacions del centre**: Llocs reals on es realitzarà la millora de xarxes.
     - **Laboratori informàtic**: Espai a l'aula amb ordinadors per a configuració de dispositius i simulacions.
@@ -68,42 +68,42 @@ Per planificar de manera efectiva les Situacions d’Aprenentatge (SA), les prog
  -->
 ## :checkered_flag: Proposta
 
-La proposta de Situació d’Aprenentatge que es presenta al següent apartat ha sigut **dissenyada com una actuació de llarg recorregut** al llarg de **tot el curs acadèmic**, amb una estructura flexible per adaptar-se a les necessitats reals del centre i del grup classe. Es tracta, a més, d’una **situació de tipus ApS (Aprenentatge Servei)**, que permet connectar els coneixements tècnics del mòdul amb una aplicació real, funcional i socialment significativa.
+La proposta de Situació d'Aprenentatge que es presenta al següent apartat ha sigut **dissenyada com una actuació de llarg recorregut** al llarg de **tot el curs acadèmic**, amb una estructura flexible per adaptar-se a les necessitats reals del centre i del grup classe. Es tracta, a més, d'una **situació de tipus ApS (Aprenentatge Servei)**, que permet connectar els coneixements tècnics del mòdul amb una aplicació real, funcional i socialment significativa.
 
 La seua elecció no és casual: naix de la **identificació dels sabers clau** del mòdul **Instal·lació i Manteniment de Xarxes**, que abasten des de la selecció i muntatge de canalitzacions i racks, fins al crimpat, el desplegament del cablejat, la configuració de xarxes locals i la prevenció de riscos laborals. Aquests sabers es concreten en els següents blocs:
 
-- **Tipologia d’instal·lacions i elements de xarxa** (RA1)
+- **Tipologia d'instal·lacions i elements de xarxa** (RA1)
 - **Tècniques de muntatge i interpretació de plànols** (RA2)
 - **Desplegament i etiquetatge de cablejat** (RA3)
 - **Instal·lació de sistemes de transmissió i connexió** (RA4)
 - **Configuració i representació de xarxes locals** (RA5)
 - **Prevenció de riscos i gestió ambiental** (RA6)
 
-En un cicle com aquest, on l’alumnat sovint presenta recorreguts educatius trencats i una baixa autoestima acadèmica, situacions com aquesta **esdevenen una oportunitat transformadora** per connectar el que aprenen amb un projecte real, tangible i col·laboratiu, reforçant així tant les seues **competències professionals com personals i socials**.
+En un cicle com aquest, on l'alumnat sovint presenta recorreguts educatius trencats i una baixa autoestima acadèmica, situacions com aquesta **esdevenen una oportunitat transformadora** per connectar el que aprenen amb un projecte real, tangible i col·laboratiu, reforçant així tant les seues **competències professionals com personals i socials**.
 
 
 
 ### 🧠 Sabers bàsics
 
-Els **sabers bàsics** són els continguts essencials que es treballen a través de les Situacions d’Aprenentatge. No són una simple llista de temes, sinó el **nucli del que l’alumnat ha de comprendre i saber aplicar** en contextos reals.
+Els **sabers bàsics** són els continguts essencials que es treballen a través de les Situacions d'Aprenentatge. No són una simple llista de temes, sinó el **nucli del que l'alumnat ha de comprendre i saber aplicar** en contextos reals.
 
-La selecció d’aquests sabers **és fruit d’una reflexió acurada sobre els contiguts del títol del mòdul i el context educatiu concret del nostre centre**. Estan estretament vinculats a la realitat de l’alumnat, a les seues necessitats i a les competències professionals que es volen desenvolupar.
+La selecció d'aquests sabers **és fruit d'una reflexió acurada sobre els contiguts del títol del mòdul i el context educatiu concret del nostre centre**. Estan estretament vinculats a la realitat de l'alumnat, a les seues necessitats i a les competències professionals que es volen desenvolupar.
 
-Aquesta tria forma part de la **proposta pedagògica del cicle**, i permet **justificar de manera coherent les activitats, projectes i metodologies que es duran a terme** en l’aula. D’aquesta manera, assegurem que tot allò que es fa tinga sentit, siga significatiu i contribuïsca a l’assoliment dels objectius d’aprenentatge.
+Aquesta tria forma part de la **proposta pedagògica del cicle**, i permet **justificar de manera coherent les activitats, projectes i metodologies que es duran a terme** en l'aula. D'aquesta manera, assegurem que tot allò que es fa tinga sentit, siga significatiu i contribuïsca a l'assoliment dels objectius d'aprenentatge.
 
-Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’avaluació, **s’obtenen els sabers associats a cada RA**, així com les competències implicades. És a dir, **què han de saber fer** i **com han de comportar-se** mentre ho fan.
+Cada taula que trobaràs a continuació mostra com, a partir dels criteris d'avaluació, **s'obtenen els sabers associats a cada RA**, així com les competències implicades. És a dir, **què han de saber fer** i **com han de comportar-se** mentre ho fan.
 
-### 📚 Taula d’obtenció dels sabers a partir de la relació entre criteris d’avaluació i sabers bàsics del RA1
+### 📚 Taula d'obtenció dels sabers a partir de la relació entre criteris d'avaluació i sabers bàsics del RA1
 
 <table>
     <tr>
         <td rowspan="2" class="header-vertical header-vertical-ra">Resultat d'Aprenentatge</td>
         <td rowspan="2">RA1. Selecciona els elements que configuren les xarxes per a la transmissió de veu i dades, descrivint-ne les principals característiques i funcionalitat.</td>
         <td rowspan="2">
-            - Tipus d’instal·lacions de xarxes.<br>
-            - Elements físics d’una xarxa: canalitzacions, cablejats, antenes, armaris, «racks» i caixes.<br>
+            - Tipus d'instal·lacions de xarxes.<br>
+            - Elements físics d'una xarxa: canalitzacions, cablejats, antenes, armaris, «racks» i caixes.<br>
             - Classificació dels conductors: parell de coure, cable coaxial, fibra òptica.<br>
-            - Tipologia de caixes i registres: armaris, caixes de superfície, caixes d’empotrar.<br>
+            - Tipologia de caixes i registres: armaris, caixes de superfície, caixes d'empotrar.<br>
             - Tipus de fixacions: tacs, brides, cargols, femelles, grapes.<br>
             - Relació entre fixacions i elements de xarxa.<br>
         </td>
@@ -146,9 +146,9 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>d) S'ha determinat la tipologia de les diferents caixes i registres.</td>
-        <td>Tipologia de caixes i registres: armaris, caixes de superfície, caixes d’empotrar.</td>
+        <td>Tipologia de caixes i registres: armaris, caixes de superfície, caixes d'empotrar.</td>
         <td class="saber-hacer">
-            <span class="bold">Selecciona</span> la tipologia de caixes segons l’aplicació tècnica.
+            <span class="bold">Selecciona</span> la tipologia de caixes segons l'aplicació tècnica.
         </td>
         <td></td>
     </tr>
@@ -172,14 +172,14 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
 </table>
 
-### 📚 Taula d’obtenció dels sabers a partir de la relació entre criteris d’avaluació i sabers bàsics del RA2
+### 📚 Taula d'obtenció dels sabers a partir de la relació entre criteris d'avaluació i sabers bàsics del RA2
 
 <table>
     <tr>
         <td rowspan="2" class="header-vertical header-vertical-ra">Resultat d'Aprenentatge</td>
         <td rowspan="2">RA2. Munta canalitzacions, suports i armaris en xarxes de transmissió de veu i dades.</td>
         <td rowspan="2">
-            - Tipologia d’armaris i suports.<br>
+            - Tipologia d'armaris i suports.<br>
             - Muntatge de canalitzacions i armaris.<br>
             - Preparació i mecanització de canalitzacions.<br>
             - Tècniques de muntatge i fixació.<br>
@@ -207,7 +207,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>b) S'han tingut en compte les fases típiques per al muntatge d'un «rack».</td>
-        <td>Fases de muntatge d’un rack.</td>
+        <td>Fases de muntatge d'un rack.</td>
         <td class="saber-hacer">
             <span class="bold">Planifica</span> i <span class="bold">executa</span> les fases de muntatge de forma ordenada.
         </td>
@@ -217,7 +217,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>c) S'han identificat en un croquis de l'edifici o part de l'edifici els llocs d'ubicació dels elements de la instal·lació.</td>
-        <td>Interpretació de croquis i plànols d’edificis.</td>
+        <td>Interpretació de croquis i plànols d'edificis.</td>
         <td class="saber-hacer">
             <span class="bold">Ubica</span> correctament els punts de la instal·lació en el plànol.
         </td>
@@ -243,9 +243,9 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>f) S'han muntat els armaris («racks») interpretant el plànol.</td>
-        <td>Muntatge d’armaris segons plànol.</td>
+        <td>Muntatge d'armaris segons plànol.</td>
         <td class="saber-hacer">
-            <span class="bold">Munta</span> l’armari segons les especificacions tècniques del plànol.
+            <span class="bold">Munta</span> l'armari segons les especificacions tècniques del plànol.
         </td>
         <td class="saber-estar">
             Treballa amb ordre i cura en el muntatge.
@@ -271,19 +271,19 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
 </table>
 
-### 📚 Taula d’obtenció dels sabers a partir de la relació entre criteris d’avaluació i sabers bàsics del RA3
+### 📚 Taula d'obtenció dels sabers a partir de la relació entre criteris d'avaluació i sabers bàsics del RA3
 
 <table>
     <tr>
         <td rowspan="2" class="header-vertical header-vertical-ra">Resultat d'Aprenentatge</td>
-        <td rowspan="2">RA3. Desplega el cablejat d’una xarxa de veu i dades analitzant el seu traçat.</td>
+        <td rowspan="2">RA3. Desplega el cablejat d'una xarxa de veu i dades analitzant el seu traçat.</td>
         <td rowspan="2">
             - Mitjans de transmissió: parell trenat, coaxial, fibra òptica.<br>
             - Categoria del cablejat i espais per al desplegament.<br>
             - Suports per a canalitzacions i ús de guies passacables.<br>
             - Tècniques de tall, etiquetatge i identificació de cables.<br>
-            - Muntatge d’armaris de comunicacions.<br>
-            - Connexió de preses d’usuari i panells d’apedaçament.<br>
+            - Muntatge d'armaris de comunicacions.<br>
+            - Connexió de preses d'usuari i panells d'apedaçament.<br>
             - Qualitat i seguretat en la instal·lació.<br>
         </td>
         <td rowspan="2" class="header-vertical header-vertical-bc">Bloc de continguts</td>
@@ -299,7 +299,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td>Parell trenat, cable coaxial, fibra òptica.</td>
         <td rowspan="7" class="header-vertical header-vertical-cb">Continguts Bàsics</td>
         <td class="saber-hacer">
-            <span class="bold">Distingeix</span> entre els diferents tipus de cables segons l’ús.
+            <span class="bold">Distingeix</span> entre els diferents tipus de cables segons l'ús.
         </td>
         <td class="saber-estar">
             Mostra criteri tècnic en la selecció del material.
@@ -312,7 +312,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
             <span class="bold">Analitza</span> el traçat i <span class="bold">planifica</span> el desplegament del cablejat.
         </td>
         <td class="saber-estar">
-            Manté l’ordre i la planificació en el treball.
+            Manté l'ordre i la planificació en el treball.
         </td>
     </tr>
     <tr>
@@ -335,7 +335,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>e) S'han muntat els armaris de comunicacions i els seus accessoris.</td>
-        <td>Instal·lació d’armaris i accessoris.</td>
+        <td>Instal·lació d'armaris i accessoris.</td>
         <td class="saber-hacer">
             <span class="bold">Munta</span> armaris assegurant la correcta disposició dels elements.
         </td>
@@ -343,7 +343,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>f) S'han muntat i conexionat les preses d'usuari i els panells de connexió.</td>
-        <td>Preses d’usuari i panells d’apedaçament.</td>
+        <td>Preses d'usuari i panells d'apedaçament.</td>
         <td class="saber-hacer">
             <span class="bold">Conexiona</span> les preses i panells de forma clara i ordenada.
         </td>
@@ -363,7 +363,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
 </table>
 
-### 📚 Taula d’obtenció dels sabers a partir de la relació entre criteris d’avaluació i sabers bàsics del RA4
+### 📚 Taula d'obtenció dels sabers a partir de la relació entre criteris d'avaluació i sabers bàsics del RA4
 
 <table>
     <tr>
@@ -372,10 +372,10 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td rowspan="2">
             - Muntatge de sistemes i elements de telecomunicació.<br>
             - Identificació i connexió de cablejat.<br>
-            - Col·locació d’antennes, amplificadors, etc.<br>
+            - Col·locació d'antennes, amplificadors, etc.<br>
             - Ús de ferramentes i fixacions.<br>
             - Aplicació de tècniques de connexió.<br>
-            - Col·locació d’embellidors i acabats.<br>
+            - Col·locació d'embellidors i acabats.<br>
             - Compliment de normes de seguretat.<br>
         </td>
         <td rowspan="2" class="header-vertical header-vertical-bc">Bloc de continguts</td>
@@ -394,7 +394,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
             <span class="bold">Munta</span> components formats per diverses peces seguint les instruccions tècniques.
         </td>
         <td class="saber-estar">
-            Mostra precisió i paciència durant l’ensamblatge.
+            Mostra precisió i paciència durant l'ensamblatge.
         </td>
     </tr>
     <tr>
@@ -404,14 +404,14 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
             <span class="bold">Reconeix</span> cables mitjançant colors, etiquetes o codis.
         </td>
         <td class="saber-estar">
-            Respecta els codis de colors i l’ordre establit.
+            Respecta els codis de colors i l'ordre establit.
         </td>
     </tr>
     <tr>
         <td>c) S'han col·locat els sistemes o elements (antennes, amplificadors, entre altres) en el seu lloc d'ubicació.</td>
-        <td>Ubicació d’elements de telecomunicació.</td>
+        <td>Ubicació d'elements de telecomunicació.</td>
         <td class="saber-hacer">
-            <span class="bold">Col·loca</span> els dispositius al lloc previst assegurant-ne l’accessibilitat i funcionalitat.
+            <span class="bold">Col·loca</span> els dispositius al lloc previst assegurant-ne l'accessibilitat i funcionalitat.
         </td>
         <td></td>
     </tr>
@@ -463,7 +463,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
 </table>
 
-### 📚 Taula d’obtenció dels sabers a partir de la relació entre criteris d’avaluació i sabers bàsics del RA5
+### 📚 Taula d'obtenció dels sabers a partir de la relació entre criteris d'avaluació i sabers bàsics del RA5
 
 <table>
     <tr>
@@ -472,7 +472,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td rowspan="2">
             - Principis de funcionament de xarxes locals.<br>
             - Tipus de xarxes i estructures: topologia.<br>
-            - Elements d’una xarxa local i la seua funció.<br>
+            - Elements d'una xarxa local i la seua funció.<br>
             - Mitjans de transmissió: cablejat i connectors.<br>
             - Interpretació i representació de mapes físics de xarxa.<br>
             - Eines de representació gràfica.<br>
@@ -518,7 +518,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td>d) S'han descrit els mitjans de transmissió.</td>
         <td>Cablejat, connectors i mitjans físics.</td>
         <td class="saber-hacer">
-            <span class="bold">Compara</span> els diferents tipus de cablejat segons l’ús.
+            <span class="bold">Compara</span> els diferents tipus de cablejat segons l'ús.
         </td>
         <td></td>
     </tr>
@@ -552,7 +552,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
 </table>
 
-### 📚 Taula d’obtenció dels sabers a partir de la relació entre criteris d’avaluació i sabers bàsics del RA6
+### 📚 Taula d'obtenció dels sabers a partir de la relació entre criteris d'avaluació i sabers bàsics del RA6
 
 <table>
     <tr>
@@ -560,8 +560,8 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td rowspan="2">RA6. Compleix les normes de prevenció de riscos laborals i de protecció ambiental, identificant els riscos associats, les mesures i sistemes per a prevenir-los.</td>
         <td rowspan="2">
             - Identificació de riscos en la manipulació de materials i eines.<br>
-            - Normes de seguretat en l’ús de màquines.<br>
-            - Causes freqüents d’accidents.<br>
+            - Normes de seguretat en l'ús de màquines.<br>
+            - Causes freqüents d'accidents.<br>
             - Elements de seguretat i protecció individual.<br>
             - Relació entre manipulació i mesures de protecció.<br>
             - Fonts de contaminació ambiental.<br>
@@ -589,17 +589,17 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>b) S'han operat les màquines respectant les normes de seguretat.</td>
-        <td>Normativa de seguretat en l’ús de màquines.</td>
+        <td>Normativa de seguretat en l'ús de màquines.</td>
         <td class="saber-hacer">
             <span class="bold">Utilitza</span> les màquines aplicant les normes de seguretat establides.
         </td>
         <td class="saber-estar">
-            Respecta les normes i mostra disciplina en l’ús del material.
+            Respecta les normes i mostra disciplina en l'ús del material.
         </td>
     </tr>
     <tr>
         <td>c) S'han identificat les causes més freqüents d'accidents en la manipulació de materials, eines i màquines.</td>
-        <td>Causes habituals d’accidents laborals.</td>
+        <td>Causes habituals d'accidents laborals.</td>
         <td class="saber-hacer">
             <span class="bold">Reconeix</span> les situacions de risc més habituals per a poder anticipar-les.
         </td>
@@ -609,7 +609,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td>d) S'han descrit els elements de seguretat i els sistemes de protecció individual a emprar.</td>
         <td>Proteccions, alarmes, EPI (calçat, ulleres, roba...)</td>
         <td class="saber-hacer">
-            <span class="bold">Descriu</span> i <span class="bold">tria</span> l’equip de protecció adequat per a cada tasca.
+            <span class="bold">Descriu</span> i <span class="bold">tria</span> l'equip de protecció adequat per a cada tasca.
         </td>
         <td class="saber-estar">
             Mostra responsabilitat en la seua pròpia seguretat i la dels altres.
@@ -619,7 +619,7 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
         <td>e) S'ha relacionat la manipulació de materials, eines i màquines amb les mesures de seguretat i protecció personal requerides.</td>
         <td>Relació entre tasques i protecció.</td>
         <td class="saber-hacer">
-            <span class="bold">Aplica</span> mesures concretes segons l’activitat i el risc identificat.
+            <span class="bold">Aplica</span> mesures concretes segons l'activitat i el risc identificat.
         </td>
         <td></td>
     </tr>
@@ -643,12 +643,12 @@ Cada taula que trobaràs a continuació mostra com, a partir dels criteris d’a
     </tr>
     <tr>
         <td>h) S'ha valorat l'ordre i la neteja com a primer factor de prevenció de riscos.</td>
-        <td>Ordre, neteja i organització de l’espai de treball.</td>
+        <td>Ordre, neteja i organització de l'espai de treball.</td>
         <td class="saber-hacer">
-            <span class="bold">Manté</span> l’espai net i organitzat per a evitar accidents.
+            <span class="bold">Manté</span> l'espai net i organitzat per a evitar accidents.
         </td>
         <td class="saber-estar">
-            Treballa amb cura i responsabilitat sobre l’espai comú.
+            Treballa amb cura i responsabilitat sobre l'espai comú.
         </td>
     </tr>
 </table>

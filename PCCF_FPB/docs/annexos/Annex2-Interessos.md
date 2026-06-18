@@ -1,6 +1,6 @@
-# Annex 2. Qüestionari d’interessos professionals
+# Annex 2. Qüestionari d'interessos professionals
 
-**Nom de l’alumne/a:** __________________  
+**Nom de l'alumne/a:** __________________  
 **Grup:** __________  
 **Data:** ____ / ____ / _______
 
@@ -18,13 +18,13 @@ _____________________________________________________
 ## 3. T'interessa continuar estudiant després del cicle?
 ☐ Sí  ☐ No  ☐ No ho sé
 
-En cas afirmatiu, què t’agradaria fer?  
+En cas afirmatiu, què t'agradaria fer?  
 ☐ Grau Mitjà  
 ☐ Certificats professionals  
-☐ Cursos d’especialització  
+☐ Cursos d'especialització  
 ☐ Altres: ______________________________
 
-## 4. T’interessaria emprendre el teu propi projecte en el futur?
+## 4. T'interessaria emprendre el teu propi projecte en el futur?
 ☐ Sí  ☐ No  ☐ Potser
 
 ## 5. Com valores les teues habilitats per treballar en equip?

@@ -259,8 +259,9 @@ Theme Name: Linux Academy Study Guide Template 11-15-2019
 table.pdf-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1em 0;
-  font-size: 0.9em;
+  margin: 0.6em 0;
+  font-size: 0.78em;
+  line-height: 1.15;
   border: 1px solid #2a7fff;
 }
 
@@ -275,7 +276,7 @@ table.pdf-table thead tr {
 /* Cel·les de la taula */
 table.pdf-table th,
 table.pdf-table td {
-  padding: 0.5em;
+  padding: 0.22em 0.3em;
   vertical-align: top;
   /*border: 1px solid #ddd;*/
 }
@@ -298,9 +299,9 @@ table.pdf-table .custom-list-item {
   /* Ajusta segons la mida de la numeració */
   padding-left: 2.2em;
   /* Ha de ser igual que text-indent en positiu */
-  margin-bottom: 0.3em;
+  margin-bottom: 0.15em;
   /* Espai entre elements */
-  line-height: 1.4;
+  line-height: 1.2;
   white-space: normal;
   overflow-wrap: break-word;
 }
@@ -317,6 +318,16 @@ table.pdf-table .custom-list-item::first-line {
   font-weight: normal;
 }
 
+table.pdf-table .ods-list-item {
+  display: block;
+  padding-left: 1.7em;
+  text-indent: -1.7em;
+}
+
+table.pdf-table .ods-list-marker {
+  font-weight: normal;
+}
+
 /* Evita que WeasyPrint reinici els comptadors */
 @page {
   counter-reset: none;
@@ -327,6 +338,8 @@ table.pdf-table .custom-list-item::first-line {
 body {
   font-family: PlexSans;
   color: #000;
+  font-size: 10.5pt;
+  line-height: 1.25;
   padding: .25cm;
 }
 
@@ -488,6 +501,14 @@ ul li ul li {
 
 ul li ul li ul {
   list-style-type: none;
+}
+
+ol[type="a"] {
+  list-style-type: lower-alpha;
+}
+
+ol[type="i"] {
+  list-style-type: lower-roman;
 }
 
 /* Top level is bold, next level is just bullets, no numbers */
@@ -726,20 +747,40 @@ table {
 td,
 th {
   border: 1px solid #2a7fff;
-  padding: 10px;
+  padding: 4px 5px;
+  line-height: 1.15;
 }
 
 blockquote {
-  color: #fff;
-  background-color: #777;
-  padding: 2mm;
-  border-radius: 4px;
-  border: 1px solid #000;
+  position: relative;
+  color: #333;
+  background: none;
+  font-style: italic;
+  margin: 1em 0 1.2em 0;
+  padding: 0.25em 0.7em 0.25em 2.2em;
+  border-left: 3px solid #2a7fff;
+  border-radius: 0;
+}
+
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0.18em;
+  top: -0.18em;
+  color: #2a7fff;
+  font-family: Georgia, serif;
+  font-size: 3.2em;
+  line-height: 1;
+}
+
+blockquote p {
+  margin: 0.25em 0;
 }
 
 blockquote pre,
 blockquote code {
-  background-color: #555;
+  background-color: #eee;
+  font-style: normal;
 }
 
 

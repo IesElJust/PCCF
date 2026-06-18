@@ -1,13 +1,13 @@
-## Annex. Fitxa de planificació d’activitat complementària o extraescolar
+## Annex. Fitxa de planificació d'activitat complementària o extraescolar
 
-**Títol de l’activitat:** ______________________________________  
-**Tipus d’activitat:** ☐ Complementària  ☐ Extraescolar  
+**Títol de l'activitat:** ______________________________________  
+**Tipus d'activitat:** ☐ Complementària  ☐ Extraescolar  
 **Data prevista:** ____ / ____ / ______  
 **Duració:** __________ hores  
 **Mòduls implicats:** __________________________  
 **Responsables:** __________________________
 
-### 1. Objectius de l’activitat
+### 1. Objectius de l'activitat
 - _______________________________________________________
 - _______________________________________________________
 
@@ -22,6 +22,6 @@
 ### 4. Aspectes logístics
 - Desplaçament: ☐ No cal  ☐ Sí, mitjà de transport: ___________
 - Autoritzacions de famílies: ☐ No cal  ☐ Sí
-- Cost per a l’alumne/a: __________ € (si escau)
+- Cost per a l'alumne/a: __________ € (si escau)
 - Coordinació amb empreses/institucions: ___________________
 

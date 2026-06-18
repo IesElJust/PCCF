@@ -179,8 +179,6 @@ Les comarques de **la Safor** i **la Ribera** han experimentat un creixement not
 -   Suport i manteniment de sistemes i infraestructures TIC
 -   Desenvolupament d'aplicacions i serveis multiplataforma
 
-L'impacte de la **DANA d'octubre de 2024** ha incrementat, a més, la necessitat de perfils relacionats amb la **recuperació de dades, manteniment i seguretat informàtica**, i la transformació digital del teixit comercial.
-
 ## 3.2. Marc normatiu de referència
 
 Segons el **Reial decret 498/2024**, que actualitza els perfils professionals dels cicles de grau bàsic, les antigues /"competències professionals, personals i socials/" passen a denominar-se **competències professionals i per a l'ocupabilitat**, posant èmfasi en:
