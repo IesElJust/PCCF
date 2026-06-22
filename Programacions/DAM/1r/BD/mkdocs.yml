@@ -1,0 +1,30 @@
+site_name: Programació didàctica. Bases de dades
+theme:
+  name: material
+  logo: img/logo.svg
+  palette:
+    primary: deep purple
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+plugins:
+  - search
+  - add_tables:
+      ods_path: PD_BD_DAM.ods
+      xslt_path: ods2html.xslt
+extra_css:
+  - styles/taules.css
+nav:
+  - "1. Dades identificatives i contextualització": 1.Identificacio.md
+  - "2. Relació amb les unitats de competència": 2.relacio_uc.md
+  - "3. Contribució dels RA": 3.contribucio_ra.md
+  - "4. RA, CA i continguts": 4.RAs_CAs_Continguts.md
+  - "5. Seqüenciació de les UP": 5.esquema_general_up.md
+  - "6. Metodologia": 6.Metodologia.md
+  - "7. Recursos": 7.Recursos.md
+  - "8. Espais i equipaments": 8.Espais_equipament.md
+  - "9. Atenció a la diversitat": 9.Mesures_Atencio_Diversitat.md
+  - "10. Avaluació": 10.Avaluacio.md
+  - "11. Activitats complementàries": 11.Activitats_Complementaries.md
+  - "12. Avaluació de la programació": 12.Procediments_Avaluacio_PD.md
