@@ -4,7 +4,7 @@
 
 * S'ha eliminat a tots els PCCF a l'apartat *3. Adequació i adaptació de les competències professionals del títol al context socioeconòmic i cultural del centre* les refeències a la DANA del 2024.
 
-* S'han revisat els scripts per a la generació dels pdfs a partir de les taules per milllorar les numeracions. 
+* S'han revisat els scripts per a la generació dels pdfs a partir de les taules per milllorar les numeracions.
 
 * S'han incorporat a les taules d'algues PCCF les contribucions a les competències professionals, personals i per  a l'ocupabilitat dels mòduls que faltàven (Apartat 5)
 
