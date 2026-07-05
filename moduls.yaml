@@ -1,0 +1,69 @@
+SMX:
+    - 1r:
+        - MME
+        - SOM
+        - AOF
+        - XAL
+    - 2n:
+        - SOX
+        - SGI
+        - SXA
+        - APW
+        - SOST
+        - DIG
+        - IPRG
+    - PIM
+
+ASIX:
+
+    - 1r:
+        - ISO
+        - PAX
+        - FWH
+        - GBD
+        - PIM
+        - LMSGI
+    - 2n:
+        - ASO
+        - SEX
+        - IAW
+        - SOST
+        - ASGBD
+        - SAD
+        - DIG
+    - PIM
+
+
+DAM:
+
+    - 1r:
+        - LMSGI
+        - SI
+        - BD
+        - PRG
+        - EDD
+    - 2n:
+        - AD
+        - DI
+        - PSP
+        - PMDM
+        - SOST
+        - SGE
+        - DIG
+    - PIM
+
+DAW:
+    - 1r:
+        - LMSGI
+        - SI
+        - BD
+        - PRG
+        - EDD
+    - 2n:
+        - DWEC
+        - DWES
+        - DAW
+        - DIG
+        - DIW
+        - SOST
+    - PIM
