@@ -1,0 +1,9 @@
+setup.py
+add_tables/__init__.py
+add_tables/plugin.py
+add_tables/transformer.py
+mkdocs_radd_tables.egg-info/PKG-INFO
+mkdocs_radd_tables.egg-info/SOURCES.txt
+mkdocs_radd_tables.egg-info/dependency_links.txt
+mkdocs_radd_tables.egg-info/entry_points.txt
+mkdocs_radd_tables.egg-info/top_level.txt

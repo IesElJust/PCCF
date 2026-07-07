@@ -1,0 +1,12 @@
+mkdocs
+mkdocs-material
+pymdown-extensions
+lxml
+odfpy
+PyYAML
+Markdown
+WeasyPrint
+pypandoc
+pandocfilters
+setuptools
+wheel
