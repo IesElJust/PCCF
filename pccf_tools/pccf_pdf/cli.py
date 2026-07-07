@@ -132,7 +132,7 @@ def generate_pdf(project_dir, output_pdf, keep_html=False, template=None, css=No
         if markdown_file.is_file() and markdown_file.suffix == ".md":
             print(f"Processant fitxer markdown: {markdown_file}")
             all_markdown_content += render_markdown_to_html(markdown_file, ods_path, xslt_path)
-            all_markdown_content += "\n"
+            all_markdown_content += "\n\n"
         else:
             print(f"Saltant element no valid: {markdown_file}")
 

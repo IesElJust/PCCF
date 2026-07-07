@@ -19,9 +19,8 @@ ASIX:
     - 1r:
         - ISO
         - PAX
-        - FWH
+        - FHW
         - GBD
-        - PIM
         - LMSGI
     - 2n:
         - ASO
