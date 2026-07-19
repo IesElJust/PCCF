@@ -1,11 +1,12 @@
-import re
+import logging
 import os
-import zipfile
-import xml.etree.ElementTree as ET
+
 from mkdocs.plugins import BasePlugin
 from mkdocs.config import config_options
-import subprocess
+
 from .transformer import process_markdown
+
+logger = logging.getLogger("mkdocs.plugins.add_tables")
 
 class AddTablesPlugin(BasePlugin):
     config_scheme = [
@@ -17,8 +18,8 @@ class AddTablesPlugin(BasePlugin):
         self.ods_path = os.path.join(os.path.dirname(config.config_file_path), self.config['ods_path'])
         self.xslt_path = os.path.join(os.path.dirname(config.config_file_path), self.config['xslt_path'])
 
-        print(f"INFO    -  [add_tables] ods_path: {self.ods_path}")
-        print(f"INFO    -  [add_tables] xslt_path: {self.xslt_path}")
+        logger.info("ods_path: %s", self.ods_path)
+        logger.info("xslt_path: %s", self.xslt_path)
         return config
 
 
@@ -27,28 +28,3 @@ class AddTablesPlugin(BasePlugin):
 
     def on_post_page(self, output_content, **kwargs):
         return output_content
-
-    
-        try:
-            with zipfile.ZipFile(ods_path, "r") as z:
-                with z.open("content.xml") as content:
-                    tmp_content_path = "/tmp/content.xml"
-                    with open(tmp_content_path, "wb") as f:
-                        f.write(content.read())
-
-            result = subprocess.run(
-                ["xsltproc", "--stringparam", "sheet_name", sheet_name, xslt_path, tmp_content_path],
-                capture_output=True,
-                text=True
-            )
-
-            if result.returncode != 0:
-                print("ERROR    -  XSLT processing failed:")
-                print(result.stderr)
-                return None
-
-            return result.stdout
-
-        except Exception as e:
-            print(f"ERROR    -  transform_sheet_to_html: {e}")
-            return None

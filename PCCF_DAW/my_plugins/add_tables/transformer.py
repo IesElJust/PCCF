@@ -1,14 +1,21 @@
 from lxml import etree
+import logging
+import os
 import re
+import tempfile
 import zipfile
 
-def extract_content_xml(ods_path, out_path="/tmp/content.xml"):
+logger = logging.getLogger("mkdocs.plugins.add_tables")
+
+def extract_content_xml(ods_path):
     """Extreu content.xml del fitxer ODS"""
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".xml")
+    temp_file.close()
     with zipfile.ZipFile(ods_path, "r") as z:
         with z.open("content.xml") as content:
-            with open(out_path, "wb") as f:
+            with open(temp_file.name, "wb") as f:
                 f.write(content.read())
-    return out_path
+    return temp_file.name
 
 
 def transform_sheet_to_html(xslt_path, content_xml_path, sheet_name):
@@ -27,7 +34,7 @@ def transform_sheet_to_html(xslt_path, content_xml_path, sheet_name):
         return str(html_tree)
 
     except Exception as e:
-        print(f"[XSLT ERROR - lxml] Full '{sheet_name}': {e}")
+        logger.error("XSLT error en la fulla '%s': %s", sheet_name, e)
         return None
 
 def process_markdown(markdown, ods_path, xslt_path):
@@ -48,4 +55,7 @@ def process_markdown(markdown, ods_path, xslt_path):
             return f"<h3>{title}</h3>\n{html}"
         return html
 
-    return pattern.sub(replace_match, markdown)
+    try:
+        return pattern.sub(replace_match, markdown)
+    finally:
+        os.unlink(content_xml_path)

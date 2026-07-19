@@ -12,9 +12,13 @@
   </xsl:template>
 
   <xsl:template match="table:table">
-    <table>
-      <xsl:apply-templates select="table:table-row[1]" mode="header"/>
-      <xsl:apply-templates select="table:table-row[position()>1 and not(@table:number-rows-repeated)]" mode="body"/>
+    <table class="pdf-table">
+      <thead>
+        <xsl:apply-templates select="table:table-row[1]" mode="header"/>
+      </thead>
+      <tbody>
+        <xsl:apply-templates select="table:table-row[position()>1 and not(@table:number-rows-repeated)]" mode="body"/>
+      </tbody>
     </table>
   </xsl:template>
 
@@ -60,15 +64,12 @@
     <xsl:variable name="repeat" select="number(@table:number-columns-repeated)" />
     <xsl:variable name="colspan" select="@table:number-columns-spanned" />
     <xsl:variable name="rowspan" select="@table:number-rows-spanned" />
-    <xsl:variable name="value">
-      <xsl:apply-templates select="text:p"/>
-    </xsl:variable>
 
     <xsl:choose>
       <xsl:when test="$repeat &gt; 1">
         <xsl:call-template name="repeat-cell">
           <xsl:with-param name="tag" select="$tag"/>
-          <xsl:with-param name="value" select="$value"/>
+          <xsl:with-param name="cell" select="."/>
           <xsl:with-param name="count" select="$repeat"/>
         </xsl:call-template>
       </xsl:when>
@@ -84,7 +85,7 @@
               <xsl:value-of select="$rowspan"/>
             </xsl:attribute>
           </xsl:if>
-          <xsl:value-of select="$value"/>
+          <xsl:apply-templates select="text:p"/>
         </xsl:element>
       </xsl:otherwise>
     </xsl:choose>
@@ -93,15 +94,15 @@
   <!-- Repetició de cel·les -->
   <xsl:template name="repeat-cell">
     <xsl:param name="tag"/>
-    <xsl:param name="value"/>
+    <xsl:param name="cell"/>
     <xsl:param name="count"/>
     <xsl:if test="$count &gt; 0">
       <xsl:element name="{$tag}">
-        <xsl:value-of select="$value"/>
+        <xsl:apply-templates select="$cell/text:p"/>
       </xsl:element>
       <xsl:call-template name="repeat-cell">
         <xsl:with-param name="tag" select="$tag"/>
-        <xsl:with-param name="value" select="$value"/>
+        <xsl:with-param name="cell" select="$cell"/>
         <xsl:with-param name="count" select="$count - 1"/>
       </xsl:call-template>
     </xsl:if>
@@ -109,6 +110,43 @@
 
   <!-- Text -->
   <xsl:template match="text:p">
+    <xsl:variable name="text" select="normalize-space(.)"/>
+    <xsl:variable name="first-token" select="substring-before(concat($text, ' '), ' ')"/>
+    <xsl:variable name="last-char" select="substring($first-token, string-length($first-token), 1)"/>
+
+    <p>
+      <xsl:choose>
+        <xsl:when test="$text != '' and ($last-char = ')' or $last-char = '.')">
+          <span class="list-marker"><xsl:value-of select="$first-token"/></span>
+          <xsl:if test="string-length(substring-after($text, $first-token)) &gt; 0">
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="normalize-space(substring-after($text, $first-token))"/>
+          </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </p>
+  </xsl:template>
+
+  <xsl:template match="text:span">
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="text:s">
+    <xsl:text> </xsl:text>
+  </xsl:template>
+
+  <xsl:template match="text:line-break">
+    <br/>
+  </xsl:template>
+
+  <xsl:template match="text:tab">
+    <xsl:text> </xsl:text>
+  </xsl:template>
+
+  <xsl:template match="text()">
     <xsl:value-of select="."/>
   </xsl:template>
 
