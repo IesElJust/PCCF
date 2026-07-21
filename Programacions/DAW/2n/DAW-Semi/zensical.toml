@@ -1,0 +1,37 @@
+[project]
+site_name = "Programació didàctica - Desplegament d'aplicacions web"
+site_url = "https://example.invalid/daw-0614-despliegue-aplicaciones-web/"
+extra_css = ["stylesheets/extra.css"]
+
+[project.theme]
+variant = "classic"
+language = "ca"
+custom_dir = "theme-overrides"
+logo = "img/logocap.png"
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Canvia a mode fosc"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Canvia a mode clar"
+
+[navigation]
+nav = [
+  { Home = "index.md" },
+  { "01 Identificació" = "1.Identificacio.md" },
+  { "02 Marc normatiu" = "2-relacio-uc.md" },
+  { "03 Perfil competencial" = "3.contribucio_ra.md" },
+  { "04 RA, CE i continguts" = "4.RAs_CAs_Continguts.md" },
+  { "05 Seqüenciació" = "5.esquema_general_up.md" },
+  { "06 Metodologia" = "6.Metodologia.md" },
+  { "07 Recursos" = "7.Recursos.md" },
+  { "08 Espais i equipament" = "8.Espais_equipament.md" },
+  { "09 Inclusió" = "9.Mesures_Atencio_Diversitat.md" },
+  { "10 Avaluació" = "10.Avaluacio.md" },
+  { "11 Complementàries" = "11.Activitats_Complementaries.md" },
+  { "12 Pràctica docent" = "12.Procediments_Avaluacio_PD.md" }
+]
