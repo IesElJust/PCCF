@@ -1,0 +1,6 @@
+#!/home/guivifra/Documentos/Curs_2026_2027/programacions_2026_2027/DAW/.venv/bin/python3
+import sys
+from fontTools.ttx import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
