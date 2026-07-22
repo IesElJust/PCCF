@@ -4,11 +4,11 @@ set -euo pipefail
 PYTHON_BIN="python3"
 ZENSICAL_BIN="zensical"
 
-if [ -x "./.venv/bin/python" ]; then
+if [ -x "./.venv/bin/python" ] && ./.venv/bin/python --version >/dev/null 2>&1; then
   PYTHON_BIN="./.venv/bin/python"
 fi
 
-if [ -x "./.venv/bin/zensical" ]; then
+if [ -x "./.venv/bin/zensical" ] && ./.venv/bin/zensical --version >/dev/null 2>&1; then
   ZENSICAL_BIN="./.venv/bin/zensical"
 fi
 

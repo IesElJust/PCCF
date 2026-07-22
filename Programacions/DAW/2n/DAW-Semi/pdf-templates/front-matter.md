@@ -1,5 +1,5 @@
 ---
-title: Programació Didàctica \newline Desplegament D'aplicacions Web
+title: Programació Didàctica \newline Desplegament d'aplicacions Web
 titlepage: true
 subtitle: PD DAW
 author:
