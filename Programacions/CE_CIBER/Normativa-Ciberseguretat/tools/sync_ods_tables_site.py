@@ -11,6 +11,9 @@ from pathlib import Path
 # En este curs d'especialització no hi ha apartat de relació d'unitats de competència,
 # així que l'apartat 2 és només marc normatiu i no rep sincronització ODS.
 SYNC_TARGETS = {
+    "docs/3.contribucio_ra.md": {
+        "<!-- ODS:contribucio_ra_cp:start -->": ("<!-- ODS:contribucio_ra_cp:end -->", "contribucio_ra_cp"),
+    },
     "docs/4.RAs_CAs_Continguts.md": {
         "<!-- ODS:ra_ca:start -->": ("<!-- ODS:ra_ca:end -->", "ra_ca"),
         "<!-- ODS:continguts:start -->": ("<!-- ODS:continguts:end -->", "continguts"),
