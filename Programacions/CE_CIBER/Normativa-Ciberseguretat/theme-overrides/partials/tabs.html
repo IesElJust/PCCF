@@ -1,0 +1,18 @@
+{#-
+  Local override mirroring sidebar ordering if navigation tabs are enabled.
+-#}
+{% import "partials/tabs-item.html" as item with context %}
+<nav class="md-tabs" aria-label="{{ lang.t('tabs') }}" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      {% if nav.homepage %}
+        {{ item.render(nav.homepage) }}
+      {% endif %}
+      {% for nav_item in nav.items | sort(attribute="title") %}
+        {% if not nav.homepage or nav_item.url != nav.homepage.url %}
+          {{ item.render(nav_item) }}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
