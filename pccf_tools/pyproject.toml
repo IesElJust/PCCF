@@ -16,10 +16,13 @@ dependencies = [
     "PyYAML",
     "Markdown",
     "WeasyPrint",
+    "zensical>=0.0.51",
 ]
 
 [project.scripts]
 pccf-genera-pdf = "pccf_pdf.cli:main"
+pccf-zensical-build = "pccf_pdf.zensical_cli:main"
+pccf-zensical-config = "pccf_pdf.zensical_config_cli:main"
 
 [project.entry-points."mkdocs.plugins"]
 add_tables = "pccf_pdf.plugin:AddTablesPlugin"

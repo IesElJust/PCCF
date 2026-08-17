@@ -10,3 +10,4 @@ pypandoc
 pandocfilters
 setuptools
 wheel
+zensical>=0.0.51

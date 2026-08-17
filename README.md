@@ -41,6 +41,7 @@ El repositori inclou ara la carpeta `pccf_tools`, que centralitza els recursos c
 * La plantilla HTML de Pandoc.
 * El CSS, imatges i tipografies compartides per WeasyPrint.
 * La comanda `pccf-genera-pdf`.
+* La comanda `pccf-zensical-build`, que genera llocs Zensical amb les taules dels ODS.
 
 Això permet aplicar canvis al generador, als estils o al plugin en un únic lloc, sense haver d'actualitzar manualment totes les carpetes PCCF o Programacions. Les còpies locals dels scripts i recursos es mantenen de moment per compatibilitat.
 
@@ -129,6 +130,43 @@ mkdocs build
 ```
 
 Que ens generarà la carpeta `site` amb el lloc en HTML.
+
+### Visualització amb Zensical
+
+Els projectes que disposen d'un fitxer `zensical.toml` es poden generar amb la
+comanda centralitzada següent, executada des de l'arrel del repositori:
+
+```bash
+venv/bin/pccf-zensical-build --project-dir PCCF_DAM --strict
+```
+
+Per a la programació de PMDM:
+
+```bash
+venv/bin/pccf-zensical-build --project-dir Programacions/DAM/2n/PMDM --strict
+```
+
+La comanda utilitza la secció `[pccf.tables]` del `zensical.toml` per localitzar
+l'ODS i l'XSLT, i transforma una còpia temporal dels fitxers Markdown abans
+d'invocar Zensical. Per tant, no necessita el `mkdocs.yml` ni modifica els
+documents font. El lloc resultant es publica en `site-zensical/`.
+
+Si Zensical està actiu en el `PATH`, s'utilitza directament. En cas contrari,
+la comanda també busca el binari en `~/.local/zensicalenv/bin/zensical`. Es pot
+indicar una altra instal·lació explícitament amb `--zensical /ruta/al/binari`.
+
+Zensical s'instal·la dins del mateix `venv` amb `./setup_entorn.sh`; no cal
+activar ni mantindre un segon entorn. Per generar un `zensical.toml` inicial a
+partir del `mkdocs.yml` d'un projecte:
+
+```bash
+venv/bin/pccf-zensical-config --project-dir PCCF_DAM
+```
+
+La comanda conserva el nom, la navegació, els estils, el logotip, les extensions
+Markdown i la configuració de les taules. Afig una configuració Zensical pròpia
+amb selector de mode clar i fosc. Si el TOML ja existeix, cal confirmar-ne la
+substitució amb `--force`.
 
 
 ## Generació del PDF

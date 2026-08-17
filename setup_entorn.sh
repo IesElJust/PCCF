@@ -23,6 +23,9 @@ echo "Comprovant eines"
 venv/bin/python -c "import mkdocs, material, odf, yaml, weasyprint, pccf_pdf; print('Imports OK')"
 venv/bin/mkdocs --version
 venv/bin/pccf-genera-pdf --help >/dev/null
+venv/bin/pccf-zensical-build --help >/dev/null
+venv/bin/pccf-zensical-config --help >/dev/null
+venv/bin/zensical --version
 
 if command -v pandoc >/dev/null 2>&1; then
   echo "Pandoc OK: $(pandoc --version | head -n 1)"
