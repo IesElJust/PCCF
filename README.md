@@ -7,6 +7,21 @@ pandoc-css-weasyprint-template](https://github.com/craigbass76/pandoc-css-weasyp
 
 Els diferents apartats del document són els indicats a la [Guía pràctica per al Docent del Projecte Curricular del Cicle Formatiu](https://ceice.gva.es/documents/388109149/390831792/PCCF_Guia_Practica_Docent_VAL.pdf) de la GVA.
 
+>
+> **Contingut per al curs 2025-26**
+>
+> El contingut del curs 2025-26 es troba guardat a la release [Documentació curs 2025-26](https://github.com/IesElJust/PCCF/releases/tag/curs-2025-2026)
+>
+
+
+>
+> ***Contingut adaptat al curs 2026-27***
+>
+> La documentació actual es correspon al curs 2026-27, i ha estat adaptat automàticament introduint les directrius establertes a la [Resolució de 16 de juliol de 2026, de la Secretaria Autonòmica d’Educació, per la qual es dicten instruccions sobre ordenació acadèmica i d’organització dels centres que impartisquen els graus D i E de Formació Professional durant el curs 2026-2027 a la Comunitat Valenciana](https://dogv.gva.es/datos/2026/07/20/pdf/2026_24495_va.pdf)
+>
+> Les modificacions introduides i les decisions que queden pendents a prendre per part del departament es troben al document [adaptacio_curs_2026-27.md](adaptacio_curs_2026-27.md)
+>
+
 ## Continguts de cada carpeta PCCF
 
 * **Carpeta `docs`**: Conté els diferents fitxers font en format Markdown, i la carpeta `styles` amb els estils.
