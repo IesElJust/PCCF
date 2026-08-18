@@ -1,0 +1,100 @@
+# Genera tota la documentació Zensical i la publica en GitHub Pages.
+name: Desplega la documentació curricular
+
+on:
+  # Desplega automàticament cada vegada que es modifica la branca principal.
+  push:
+    branches:
+      - main
+
+  # També permet executar el desplegament manualment des de la pestanya Actions.
+  workflow_dispatch:
+
+# Evita dos desplegaments simultanis. Si n'hi ha un en curs, el nou espera.
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+# Permisos mínims necessaris: llegir el repositori i publicar en Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Genera els llocs Zensical
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # Descarrega el contingut de la branca que ha iniciat l'execució.
+      - name: Descarrega el repositori
+        uses: actions/checkout@v6
+
+      # Instal·la una versió estable i explícita de Python i activa la cau de pip.
+      - name: Prepara Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            pccf_tools/pyproject.toml
+
+      # Reprodueix l'entorn local del projecte dins del runner de GitHub.
+      - name: Crea l'entorn virtual
+        run: python -m venv venv
+
+      - name: Instal·la les dependències
+        run: |
+          venv/bin/python -m pip install --upgrade pip
+          venv/bin/python -m pip install -r requirements.txt
+          venv/bin/python -m pip install --no-build-isolation -e pccf_tools
+
+      # Comprovacions breus per facilitar el diagnòstic si canvia l'entorn.
+      - name: Comprova les eines instal·lades
+        run: |
+          venv/bin/python --version
+          venv/bin/zensical --version
+          venv/bin/pccf-zensical-full-build --help >/dev/null
+
+      # Genera la landing i tots els PCCF i programacions dins zensical_full_doc.
+      # No usem --fail-on-error perquè actualment SMX/DIG no disposa d'ODS; la
+      # landing l'identifica com a no disponible i publica la resta del material.
+      - name: Genera la documentació completa
+        run: venv/bin/pccf-zensical-full-build --strict
+
+      # Verifica els fitxers imprescindibles abans de crear l'artefacte.
+      - name: Valida el resultat
+        run: |
+          test -f zensical_full_doc/index.html
+          test -f zensical_full_doc/index.css
+          test -f zensical_full_doc/logo_gran.png
+          test -f zensical_full_doc/.nojekyll
+
+      # Prepara les metadades de Pages i empaqueta únicament el lloc generat.
+      - name: Configura GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Puja l'artefacte de GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: zensical_full_doc
+
+  deploy:
+    name: Publica en GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    # GitHub mostra en aquest entorn l'URL del desplegament resultant.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # Publica l'artefacte creat pel treball build.
+      - name: Desplega la documentació
+        id: deployment
+        uses: actions/deploy-pages@v4
