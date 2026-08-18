@@ -2,10 +2,11 @@
 
 Aquest repositori conté les versions en desenvolupament dels Projectes Curriculars dels Cicles Formatius de la família professional d'Informàtica i Comunicacions de l'IES Jaume II El Just.
 
-Els fitxers font es troben en format Markdown, com a projectes amb MkDocs, i en un full de càlcul amb les taules. Permeten la seua exportació a PDF a través de Pandoc i WeasyPrint, fent ús d'una adaptació de la plantilla [craigbass76
-pandoc-css-weasyprint-template](https://github.com/craigbass76/pandoc-css-weasyprint-template).
+Els fitxers font es troben en format Markdown, com a projectes amb MkDocs/Zensical, i en un full de càlcul amb les taules. Permeten la seua exportació a PDF a través de Pandoc i WeasyPrint, fent ús d'una adaptació de la plantilla [craigbass76/pandoc-css-weasyprint-template](https://github.com/craigbass76/pandoc-css-weasyprint-template).
 
 Els diferents apartats del document són els indicats a la [Guía pràctica per al Docent del Projecte Curricular del Cicle Formatiu](https://ceice.gva.es/documents/388109149/390831792/PCCF_Guia_Practica_Docent_VAL.pdf) de la GVA.
+
+**Podeu consultar tota la documentació desplegada a [https://ieseljust.github.io/PCCF/](https://ieseljust.github.io/PCCF/).**
 
 >
 > **Contingut per al curs 2025-26**
