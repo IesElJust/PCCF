@@ -2,6 +2,7 @@ venv
 # Carpeta de la documentació generada per MkDocs
 /site/
 **/site-zensical/
+/zensical_full_doc/
 
 # Fitxers de sistema
 .DS_Store

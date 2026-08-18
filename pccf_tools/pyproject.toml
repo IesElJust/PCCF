@@ -23,6 +23,8 @@ dependencies = [
 pccf-genera-pdf = "pccf_pdf.cli:main"
 pccf-zensical-build = "pccf_pdf.zensical_cli:main"
 pccf-zensical-config = "pccf_pdf.zensical_config_cli:main"
+pccf-zensical-serve = "pccf_pdf.zensical_serve_cli:main"
+pccf-zensical-full-build = "pccf_pdf.zensical_full_cli:main"
 
 [project.entry-points."mkdocs.plugins"]
 add_tables = "pccf_pdf.plugin:AddTablesPlugin"
@@ -36,6 +38,8 @@ pccf_pdf = [
     "resources/ods2html.xslt",
     "resources/templates/default.html",
     "resources/templates/style-portrait.css",
+    "resources/templates/zensical-index.html",
+    "resources/templates/zensical-index.css",
     "resources/templates/fonts/*",
     "resources/templates/img/*",
 ]

@@ -25,6 +25,8 @@ venv/bin/mkdocs --version
 venv/bin/pccf-genera-pdf --help >/dev/null
 venv/bin/pccf-zensical-build --help >/dev/null
 venv/bin/pccf-zensical-config --help >/dev/null
+venv/bin/pccf-zensical-serve --help >/dev/null
+venv/bin/pccf-zensical-full-build --help >/dev/null
 venv/bin/zensical --version
 
 if command -v pandoc >/dev/null 2>&1; then

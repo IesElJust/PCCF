@@ -54,15 +54,24 @@ def find_tables_config(plugins):
 
 
 def markdown_extension_sections(extensions):
-    sections = []
+    sections = {}
     for extension in extensions or []:
         if isinstance(extension, str):
-            sections.append((extension, {}))
+            sections.setdefault(extension, {})
         elif isinstance(extension, dict):
-            sections.extend((name, config or {}) for name, config in extension.items())
+            for name, config in extension.items():
+                config = config or {}
+                if (
+                    name in sections
+                    and isinstance(sections[name], dict)
+                    and isinstance(config, dict)
+                ):
+                    sections[name].update(config)
+                else:
+                    sections[name] = config
         else:
             raise TypeError(f"Extensió Markdown no compatible: {extension!r}")
-    return sections
+    return sections.items()
 
 
 def primary_color(theme):

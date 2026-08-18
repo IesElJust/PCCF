@@ -168,6 +168,41 @@ Markdown i la configuració de les taules. Afig una configuració Zensical pròp
 amb selector de mode clar i fosc. Si el TOML ja existeix, cal confirmar-ne la
 substitució amb `--force`.
 
+Per generar el lloc amb les taules i servir-lo localment en una sola operació:
+
+```bash
+venv/bin/pccf-zensical-serve \
+  --project-dir Programacions/DAM/2n/PSP \
+  --strict
+```
+
+El servidor queda disponible en `http://127.0.0.1:8001/` fins que es prem
+`Ctrl+C`. El port es pot canviar amb `--port` i l'adreça d'escolta amb `--host`.
+La comanda reconstrueix el lloc cada vegada que s'inicia; no vigila canvis en
+els fitxers mentre està en execució.
+
+Per construir conjuntament tots els PCCF i totes les programacions, amb una
+portada que els organitza per nivell, cicle i curs:
+
+```bash
+venv/bin/pccf-zensical-full-build --strict
+```
+
+El resultat es publica en `zensical_full_doc/`. La portada és `index.html`, els
+PCCF queden en `PCCF/` i les programacions en `Moduls/`, mantenint l'estructura
+de cicle i curs. La generació es fa en una carpeta temporal i només reemplaça
+l'eixida global quan ha acabat. Si algun projecte falla, la portada l'identifica
+com a no disponible i la resta de llocs continuen accessibles.
+Per fer que la comanda retorne un codi d'error en eixe cas, es pot afegir
+`--fail-on-error`.
+
+L'estructura i l'estil de la portada es poden personalitzar en les plantilles
+`pccf_tools/pccf_pdf/resources/templates/zensical-index.html` i
+`pccf_tools/pccf_pdf/resources/templates/zensical-index.css`.
+El generador també incorpora el logotip compartit `logo_gran.png` i crea el
+fitxer `.nojekyll` necessari per publicar el resultat com a lloc estàtic en
+GitHub Pages.
+
 
 ## Generació del PDF
 

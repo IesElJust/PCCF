@@ -47,13 +47,13 @@ def resolve_zensical(explicit_path=None):
             return candidate.resolve()
         raise FileNotFoundError(f"No s'ha trobat un executable de Zensical en: {candidate}")
 
+    sibling = Path(sys.executable).parent / "zensical"
+    if sibling.is_file() and os.access(sibling, os.X_OK):
+        return sibling
+
     executable = shutil.which("zensical")
     if executable:
         return Path(executable).resolve()
-
-    sibling = Path(sys.executable).resolve().parent / "zensical"
-    if sibling.is_file() and os.access(sibling, os.X_OK):
-        return sibling
 
     candidate = Path.home() / ".local" / "zensicalenv" / "bin" / "zensical"
     if candidate.is_file() and os.access(candidate, os.X_OK):
@@ -130,11 +130,20 @@ def build_zensical_site(project_dir, config_name=DEFAULT_CONFIG, zensical=None, 
     )
     ods_path = project_dir / configured_ods
     if not ods_path.is_file():
-        raise FileNotFoundError(f"No s'ha trobat l'ODS configurat: {ods_path}")
+        ods_candidates = sorted(project_dir.glob("*.ods"))
+        if len(ods_candidates) == 1:
+            ods_path = ods_candidates[0]
+            print(f"AVÍS: s'utilitza l'únic ODS disponible: {ods_path.name}")
+        else:
+            raise FileNotFoundError(f"No s'ha trobat l'ODS configurat: {ods_path}")
 
     xslt_path = project_dir / configured_xslt if configured_xslt else None
     if xslt_path is not None and not xslt_path.is_file():
-        raise FileNotFoundError(f"No s'ha trobat l'XSLT configurat: {xslt_path}")
+        print(
+            f"AVÍS: no s'ha trobat l'XSLT configurat ({xslt_path.name}); "
+            "el transformador central no el necessita."
+        )
+        xslt_path = None
 
     zensical_bin = resolve_zensical(zensical)
     with tempfile.TemporaryDirectory(prefix="pccf-zensical-") as temp_dir:
@@ -152,6 +161,7 @@ def build_zensical_site(project_dir, config_name=DEFAULT_CONFIG, zensical=None, 
 
     print(f"Taules ODS incorporades en {replaced_files} fitxers Markdown.")
     print(f"Lloc Zensical generat: {project_dir / site_dir}")
+    return project_dir / site_dir
 
 
 def parse_args():
