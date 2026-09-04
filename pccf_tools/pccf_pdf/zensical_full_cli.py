@@ -56,6 +56,8 @@ def site_title(config_path):
 def discover_sites(root_dir):
     sites = []
     for project_dir in sorted(root_dir.glob("PCCF_*")):
+        if project_dir.name.endswith("_old"):
+            continue
         config = project_dir / "zensical.toml"
         if config.is_file():
             cycle = project_dir.name.removeprefix("PCCF_")

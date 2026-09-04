@@ -1,0 +1,258 @@
+import re
+import os
+import pandas as pd
+from mkdocs.plugins import BasePlugin
+from mkdocs.config import config_options
+import zipfile
+import xml.etree.ElementTree as ET
+
+
+class AddTablesPlugin(BasePlugin):
+    config_scheme = [
+        ('ods_path', config_options.Type(str))  # Utilitza config_options.Type(str)
+    ]
+
+
+
+    def extract_styles_from_ods(self, ods_path):
+        """
+        Extreu els estils de les cel·les des del fitxer ODS, incloent-hi els de content.xml i styles.xml.
+        """
+        styles = {}
+        
+        try:
+            with zipfile.ZipFile(ods_path) as z:
+                # Primer, buscar el styles.xml
+                styles_path = next((name for name in z.namelist() if 'styles.xml' in name), None)
+                if styles_path:
+                    with z.open(styles_path) as f:
+                        content = f.read()
+                        root = ET.fromstring(content)
+                    
+                    ns = {
+                        'style': 'urn:oasis:names:tc:opendocument:xmlns:style:1.0',
+                        'table': 'urn:oasis:names:tc:opendocument:xmlns:table:1.0',
+                        'text': 'urn:oasis:names:tc:opendocument:xmlns:text:1.0'
+                    }
+
+                    # Buscar estils de cel·les a styles.xml
+                    for style in root.findall('.//style:style', ns):
+                        style_name = style.get('{%s}name' % ns['style'])
+                        if style_name:
+                            styles[style_name] = {}
+                            for prop in style.findall('.//style:table-cell-properties', ns):
+                                for key, value in prop.attrib.items():
+                                    styles[style_name][key] = value
+
+                # Buscar estils a content.xml (per a estils de cel·les específiques dins del document)
+                content_path = next((name for name in z.namelist() if 'content.xml' in name), None)
+                if content_path:
+                    with z.open(content_path) as f:
+                        content = f.read()
+                        root = ET.fromstring(content)
+                    
+                    ns = {
+                        'table': 'urn:oasis:names:tc:opendocument:xmlns:table:1.0',
+                        'office': 'urn:oasis:names:tc:opendocument:xmlns:office:1.0',
+                        'text': 'urn:oasis:names:tc:opendocument:xmlns:text:1.0'
+                    }
+
+                    # Busquem les taules dins de content.xml per obtenir les cel·les amb estils directes
+                    for table in root.findall('.//table:table', ns):
+                        for row in table.findall('.//table:table-row', ns):
+                            for cell in row.findall('.//table:table-cell', ns):
+                                style_name = cell.get('{%s}style-name' % ns['table'], '')
+                                if style_name:
+                                    # Afegim l'estil associat a cada cel·la
+                                    if style_name in styles:
+                                        cell_styles = styles[style_name]
+                                        cell.set('style', str(cell_styles))  # Afegeix un estil a la cel·la
+
+                return styles
+        except Exception as e:
+            print(f"Error en processar estils: {str(e)}")
+            return None
+
+
+
+        
+    def on_config(self, config):
+        # Llegim el fitxer ODS especificat en mkdocs.yml
+        ods_path = self.config.get('ods_path', 'Projectes.ods')  # Obtenc el valor de la configuració de plugin
+        self.ods_path = os.path.join(os.path.dirname(config.config_file_path), ods_path)
+   
+        # Carreguem el fitxer ODS
+        self.sheets = pd.read_excel(self.ods_path, engine="odf", sheet_name=None)
+        
+        print(f'INFO    -  [add_tables] plugin. Setting ods_path to {self.ods_path}')
+
+        return config
+
+    def extract_table_from_ods(self, ods_path, sheet_name):
+        """
+        Versió millorada que gestiona correctament les columnes buides o combinades
+        """
+        try:
+            with zipfile.ZipFile(ods_path) as z:
+                # Trobar content.xml
+                content_path = next((name for name in z.namelist() if 'content.xml' in name), None)
+                if not content_path:
+                    raise ValueError("No s'ha trobat content.xml a l'arxiu ODF")
+                
+                # Llegir i parsejar XML
+                with z.open(content_path) as f:
+                    content = f.read()
+                    root = ET.fromstring(content)
+                
+                # Namespaces
+                ns = {
+                    'table': 'urn:oasis:names:tc:opendocument:xmlns:table:1.0',
+                    'office': 'urn:oasis:names:tc:opendocument:xmlns:office:1.0',
+                    'text': 'urn:oasis:names:tc:opendocument:xmlns:text:1.0'
+                }
+                
+                # Normalitzar nom de fulla
+                target_sheet_name = sheet_name.strip().lower()
+                
+                # Trobar la fulla
+                for sheet in root.findall('.//table:table', ns):
+                    current_name = sheet.get('{%s}name' % ns['table'], '')
+                    if current_name.strip().lower() == target_sheet_name:
+                        print(f"Trobada fulla: '{current_name}'")
+                        
+                        # Extreure dades
+                        data = []
+                        num_columns = 0
+                        
+                        for row in sheet.findall('.//table:table-row', ns):
+                            row_data = []
+                            for cell in row.findall('.//table:table-cell', ns):
+                                # Gestionar cèl·lules combinades
+                                repeat = cell.get('{%s}number-columns-repeated' % ns['table'], '1')
+                                repeat = int(repeat) if repeat.isdigit() else 1
+                                
+                                # Obtenir valor
+                                text_elements = cell.findall('.//text:p', ns)
+                                cell_value = ' '.join([elem.text for elem in text_elements if elem.text is not None])
+                                
+                                # Afegir tantes vegades com es repeteix
+                                row_data.extend([cell_value] * repeat)
+                            
+                            if row_data:  # Ignorar files buides
+                                data.append(row_data)
+                                if len(row_data) > num_columns:
+                                    num_columns = len(row_data)
+                        
+                        # Verificar que hi hagi dades
+                        if not data:
+                            return pd.DataFrame()
+                        
+                        # Assegurar que totes les files tenen el mateix nombre de columnes
+                        for i, row in enumerate(data):
+                            if len(row) < num_columns:
+                                data[i] = row + [''] * (num_columns - len(row))
+                        
+                        # La primera fila són els encapçalaments
+                        headers = data[0]
+                        # Verificar que el nombre de columnes coincideix
+                        if len(headers) != num_columns:
+                            print(f"Avís: Discrepància en columnes. Capçaleres: {len(headers)}, Dades: {num_columns}")
+                        
+                        return pd.DataFrame(data[1:], columns=headers)
+                
+                raise ValueError(f"No s'ha trobat la fulla '{sheet_name}'")
+                
+        except Exception as e:
+            print(f"Error en processar ODF: {str(e)}")
+            return None
+
+
+    def dataframe_to_html_table(self, df, title=None):
+        """
+        Converteix DataFrame a HTML amb estils optimitzats per a PDF
+        """
+        if df is None or df.empty:
+            return ""
+
+        html = []
+        if title:
+            html.append(f'<div class="table-title" markdown="1">{title}</div>')
+        
+        html.append('<table class="pdf-table" style="border-collapse: collapse; width: 100%;">')
+
+        # Obtenir els estils (cal cridar l'extracte prèviament)
+        styles = self.extract_styles_from_ods(self.ods_path)
+
+        # Aplicar estils a les capçaleres i cel·les
+        for _, row in df.iterrows():
+            html.append('<thead><tr>')
+            for col in df.columns:
+                html.append(f'<th style="background-color: {styles.get("Table_1", {}).get("background-color", "#f2f2f2")}; padding: 6px 8px; border: 1px solid #ddd;">{col}</th>')
+            html.append('</tr></thead>')
+            
+        html.append('<tbody>')
+        for _, row in df.iterrows():
+            html.append('<tr>')
+            for value in row:
+                html.append(f'<td style="padding: 6px 8px; border: 1px solid #ddd;">{value}</td>')
+            html.append('</tr>')
+        html.append('</tbody>')
+        
+        html.append('</table>')
+        return '\n'.join(html)
+
+
+    def _dataframe_to_html_table(self, df, title=None):
+        """
+        Converteix DataFrame a HTML amb estils optimitzats per a PDF
+        """
+        if df is None or df.empty:
+            return ""
+
+        # Estructura HTML amb classes CSS i atributs per a PDF
+        html = []
+        if title:
+            html.append(f'<div class="table-title" markdown="1">{title}</div>')
+        
+        html.append('<table class="pdf-table">')
+        
+        # Capçalera
+        html.append('<thead><tr>')
+        for col in df.columns:
+            html.append(f'<th>{col}</th>')
+        html.append('</tr></thead>')
+        
+        # Cos de la taula
+        html.append('<tbody>')
+        for _, row in df.iterrows():
+            html.append('<tr>')
+            for value in row:
+                html.append(f'<td>{value}</td>')
+            html.append('</tr>')
+        html.append('</tbody>')
+        
+        html.append('</table>')
+        return '\n'.join(html)
+
+    def on_page_markdown(self, markdown, **kwargs):
+        # Buscar i reemplaçar les marques en el Markdown amb les taules HTML
+        pattern = re.compile(r'\{([^}]+)\}(?:\s*"([^"]+)")?')
+        
+        def replace_match(match):
+            sheet_name = match.group(1)
+            table_title = match.group(2) if match.group(2) else None
+            
+            print(f"Processant fulla: {sheet_name} amb títol: {table_title or 'Sense títol'}")
+            
+            # Extrau la taula de l'ODF
+            df = self.extract_table_from_ods(self.ods_path, sheet_name)
+            
+            if df is None:
+                print(f"Avís: No s'ha pogut extreure la taula '{sheet_name}'")
+                return match.group(0)  # Manté el marcador original si hi ha error
+            
+            # Converteix a HTML
+            return self.dataframe_to_html_table(df, table_title)
+        
+        # Substituïm les marques pel contingut generat
+        return pattern.sub(replace_match, markdown)

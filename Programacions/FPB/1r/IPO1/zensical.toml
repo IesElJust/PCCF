@@ -1,0 +1,43 @@
+# Generat amb pccf-zensical-config a partir de mkdocs.yml.
+[project]
+site_name = "Programació didàctica · Itinerari personal per a l'ocupabilitat I"
+site_dir = "site-zensical"
+extra_css = ["styles/taules.css"]
+nav = [{ "Inici" = "index.md" }, { "1. Contextualització" = "Context.md" }, { "2. Competències" = "Competencies.md" }, { "3. Resultats d'aprenentatge i competències" = "RACompetencies.md" }, { "4. Seqüenciació" = "Sequenciacio.md" }, { "5. Metodologia" = "Metodologia.md" }, { "6. Espais" = "Espais.md" }, { "7. Recursos" = "Recursos.md" }, { "8. Atenció a la diversitat" = "Diversitat.md" }, { "9. Avaluació" = "Avaluacio.md" }, { "10. Criteris d'avaluació" = "CriterisAvaluacio.md" }, { "11. Qualificació" = "Qualificacio.md" }, { "12. Activitats" = "Activitats.md" }]
+
+[project.theme]
+variant = "classic"
+language = "ca"
+logo = "img/logo.svg"
+features = ["navigation.top", "toc.follow"]
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "deep purple"
+toggle.icon = "lucide/sun"
+toggle.name = "Canvia al mode fosc"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "deep purple"
+toggle.icon = "lucide/moon"
+toggle.name = "Canvia al mode clar"
+
+[project.markdown_extensions.admonition]
+
+[project.markdown_extensions.pymdownx.details]
+
+[project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.md_in_html]
+
+[project.markdown_extensions.def_list]
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[pccf.tables]
+ods_path = "PCCF_FPB.ods"
+xslt_path = "ods2html.xslt"

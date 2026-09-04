@@ -1,0 +1,23 @@
+# Projecte Curricular del Cicle Formatiu DAM
+
+* [1. Identificació del cicle Formatiu](1.Identificacio.md)
+* [2. Marc normatiu per al desplegament del projecte curricular](2.Marc_normatiu.md)
+* [3. Adequació i adaptació de les competències  professionals del títol al context socioeconòmic i cultural del centre](3.adequacio_competencies.md)
+* [4. Contribució de cada mòdul a les competències professionals del cicle](4.controbucio_moduls_competencies.md)
+* [5. Contribució de cada mòdul a les competències per a l'ocupabilitat](5.contribucio_moduls_competencies_ocupabilitat.md)
+* [6. Enfocaments didàctics i metodològics](6.enfocaments_didactics.md)
+* [7. Organització i distribució dels mòduls professionals](7.organitzacio_moduls.md)
+* [8. Criteris generals sobre l'organització, la comunicació i desenvolupament del procés d'avaluació de l'aprenentatge](8.criteris_organitzacio_comunicacio.md)
+* [9. Base de dades d'empreses o organismes equiparats que col·laboren amb el PCCF i  criteris d'assignació de l'alumnat](9.base_dades_empreses.md)
+* [10. Criteris per a realitzar els plans formatius individuals](10.critesis_plans_indidivuals.md)
+* [11. Criteris per a adaptar els mòduls de Digitalització i Sostenibilitat a les característiques específiques del perfil professional del cicle formatiu](11.criteris_adaptar_moduls_sost_digitalitzacio.md)
+* [12. El pla de tutoria i orientació professional](12.pla_tutoria_orientacio.md)
+* [13. Concreció dels plans i els programes del centre vinculats al currículum](13.concrecio_plans_programes_centre.md)
+* [14. Orientacions per a l'ús d'espais, mitjans i equipaments disponibles](14.orientacions_us_espais.md)
+* [15. Criteris i procediments per a l'avaluació i la revisió de la pràctica docent](15.criteris_procediments_avaluacio_practica_docent.md)
+* [16. Atenció a la diversitat i inclusió](16.atencio_diversitat.md)
+* [17. Criteris per a la planificació d'activitats complementàries i extraescolars](17.cirteris_activitats_complementaries.md)
+* [18. Criteris per a l'organització del mòdul professional de projecte](18.criteris_organitzacio_md_projecte.md)
+* [19. Altres aspectes que ha de contindre el PCCF](19.alters_aspectes_pccf.md)
+* [20. Les programacions didàctiques dels mòduls i/o els projectes](20.programacions_didactiques.md)
+

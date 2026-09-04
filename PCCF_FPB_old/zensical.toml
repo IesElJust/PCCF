@@ -1,0 +1,53 @@
+# Generat amb pccf-zensical-config a partir de mkdocs.yml.
+[project]
+site_name = "Projecte Curricular del Cicle Formatiu"
+site_dir = "site-zensical"
+extra_css = ["styles/taules.css", "assets/stylesheets/extracsspdf.css", "assets/stylesheets/customs.css", "assets/stylesheets/extra.css"]
+nav = [{ "1. Identificació del cicle Formatiu" = "1.Identificacio.md" }, { "2. Marc normatiu per al desplegament del projecte curricular" = "2.Marc_normatiu.md" }, { "3. Adequació i adaptació de les competències  professionals del títol al context socioeconòmic i cultural del centre" = "3.adequacio_competencies.md" }, { "4. Contribució de cada mòdul a les competències professionals del cicle" = "4.controbucio_moduls_competencies.md" }, { "5. Contribució de cada mòdul a les competències per a l'ocupabilitat" = "5.contribucio_moduls_competencies_ocupabilitat.md" }, { "6. Enfocaments didàctics i metodològics" = "6.enfocaments_didactics.md" }, { "7. Organització i distribució dels mòduls professionals" = "7.organitzacio_moduls.md" }, { "8. Criteris generals sobre l'organització, la comunicació i desenvolupament del procés d'avaluació de l'aprenentatge" = "8.criteris_organitzacio_comunicacio.md" }, { "9. Base de dades d'empreses o organismes equiparats que col·laboren amb el PCCF i  criteris d'assignació de l'alumnat" = "9.base_dades_empreses.md" }, { "10. Criteris per a realitzar els plans formatius individuals" = "10.critesis_plans_indidivuals.md" }, { "11. Criteris per a adaptar els mòduls de Digitalització i Sostenibilitat a les característiques específiques del perfil professional del cicle formatiu" = "11.criteris_adaptar_moduls_sost_digitalitzacio.md" }, { "12. El pla de tutoria i orientació professional" = "12.pla_tutoria_orientacio.md" }, { "13. Concreció dels plans i els programes del centre vinculats al currículum" = "13.concrecio_plans_programes_centre.md" }, { "14. Orientacions per a l'ús d'espais, mitjans i equipaments disponibles" = "14.orientacions_us_espais.md" }, { "15. Criteris i procediments per a l'avaluació i la revisió de la pràctica docent" = "15.criteris_procediments_avaluacio_practica_docent.md" }, { "16. Atenció a la diversitat i inclusió" = "16.atencio_diversitat.md" }, { "17. Criteris per a la planificació d'activitats complementàries i extraescolars" = "17.cirteris_activitats_complementaries.md" }, { "18. Criteris per a l'organització del mòdul professional de projecte" = "18.criteris_organitzacio_md_projecte.md" }, { "19. Altres aspectes que ha de contindre el PCCF" = "19.alters_aspectes_pccf.md" }, { "20. Les programacions didàctiques dels mòduls i/o els projectes" = "20.programacions_didactiques.md" }]
+
+[project.theme]
+variant = "classic"
+language = "ca"
+logo = "assets/img/logos/logoJust.png"
+features = ["navigation.top", "toc.follow"]
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "deep purple"
+toggle.icon = "lucide/sun"
+toggle.name = "Canvia al mode fosc"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "deep purple"
+toggle.icon = "lucide/moon"
+toggle.name = "Canvia al mode clar"
+
+[project.markdown_extensions.admonition]
+
+[project.markdown_extensions.pymdownx.details]
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [{ "name" = "mermaid", "class" = "mermaid", "format" = "pymdownx.superfences.fence_code_format" }]
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.md_in_html]
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "material.extensions.emoji.twemoji"
+emoji_generator = "material.extensions.emoji.to_svg"
+
+[project.markdown_extensions.pymdownx.highlight]
+linenums = true
+anchor_linenums = true
+auto_title = true
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[project.markdown_extensions.def_list]
+
+[pccf.tables]
+ods_path = "PCCF_FPB.ods"
+xslt_path = "ods2html.xslt"

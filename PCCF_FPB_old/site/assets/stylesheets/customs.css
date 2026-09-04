@@ -1,0 +1,141 @@
+/* Variables de colors */
+:root {
+  --md-primary-fg-color: #660099;  /* Morat */
+  --md-accent-fg-color: #F39200;   /* Taronja */
+}
+
+/* 📌 Ajusta el color del header i footer */
+.md-header, .md-footer {
+  background-color: var(--md-accent-fg-color);
+  color: white;
+}
+.md-header {
+  background-color: white;
+  color: var(--md-primary-fg-color);
+}
+
+/* 📌 Ajusta el contenidor principal del header */
+.md-header__inner {
+    display: flex;
+    align-items: center; /* Manté tots els elements alineats verticalment */
+    justify-content: space-between;
+    height: 10vh; /* El header ocupa un 10% de l'alçada de la pantalla */
+    padding: 0 1vw; /* Espai als costats */
+}
+
+/* 📌 Contenidor dels logos per a mantindre'ls alineats */
+.md-header__button.md-logo {
+    display: flex;
+    align-items: center;
+    gap: 1vw; /* 🔥 Espai entre els logos */
+    position: relative; /* Evita que es sobreposen */
+}
+
+/* 📌 Afig el PRIMER logo (logoJust.png) com a enllaç independent */
+.md-header__button.md-logo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("../../assets/img/logos/logoJust.png"); /* Ruta del primer logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 7vw;  
+    height: 8vh;  
+    margin-right: 0.5vw;
+}
+
+/* 📌 Fa que el PRIMER logo siga clicable */
+.md-header__button.md-logo a.logo-just {
+    position: absolute;
+    width: 7vw;
+    height: 8vh;
+    left: 0;
+    z-index: 10;
+}
+
+/* 📌 Afig el TERCER logo (GvaNext.png) com a enllaç independent */
+.md-header__button.md-logo::after {
+    content: "";
+    display: inline-block;
+    background-image: url("../../assets/img/logos/GvaNext.png"); /* Ruta del tercer logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15vw;  
+    height: 5vh;  
+    margin-left: 1.5vw;
+}
+
+/* 📌 Fa que el TERCER logo siga clicable */
+.md-header__button.md-logo a.logo-gvanext {
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    right: 0;
+    z-index: 10;
+}
+
+/* 📌 Ocultem el logo original de MkDocs si encara es mostra */
+.md-header__button.md-logo img {
+    display: none;
+}
+
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)),url("../../assets/img/fondo.png"); /* Ruta de la imatge */
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Manté la imatge fixa en el fons */
+  
+  
+}
+
+.md-footer-meta {
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+/* 📌 Contenidor del footer */
+.custom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  padding: 2vh 5vw;
+  color: black;
+  box-sizing: border-box;
+  min-height: 10vh;
+}
+
+/* 📌 Ajustos per als logos del footer */
+.footer-logo {
+  display: inline-block; /* Igual que en el header */
+  width: 12vw; /* Igual que en el header */
+  height: 10vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 📌 Rutes correctes per a `customs.css` */
+.footer-left {
+  background-image: url("../../assets/img/logos/FonsVal.png");
+  margin-right: 2vw;
+  flex-grow: 1;
+}
+
+.footer-right {
+  background-image: url("../../assets/img/logos/miniPla.png");
+  margin-left: 2vw;
+  width: 18vw;
+  flex-grow: 2;
+}
+
+/* 📌 Ajust del text perquè quede centrat entre els logos */
+.footer-text {
+  text-align: center;
+  font-size: 0.6rem;
+  flex-grow: 2;
+  max-width: 50%;
+}

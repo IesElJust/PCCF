@@ -1,0 +1,443 @@
+/* Estilo general de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo de las celdas y bordes */
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+    text-align: left;
+}
+
+/* Encabezado y colores específicos */
+.header-vertical {
+    background-color: #1A486E;
+    color: white;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Colores específicos para cada encabezado */
+.header-vertical-ra {
+    background-color: #1A486E;
+}
+
+.header-vertical-ce {
+    background-color: #2F4F4F;
+    color: white;
+}
+
+.header-vertical-bc {
+    background-color: #663a8f;
+    color: white;
+}
+
+.header-vertical-cb {
+    background-color: #034b21;
+    color: white;
+}
+
+.header-secondary {
+    background-color: #C6D9E1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.competencias-header {
+    background-color: #C6E0B4;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.saber-hacer, .saber-estar {
+    background-color: #E2EFDA;
+    padding: 8px;
+}
+
+.highlight-red {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Estilo de las filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #E8F6F3;
+}
+
+
+
+
+/* Estilo general de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo de las celdas y bordes */
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+    text-align: left;
+}
+
+/* Colores para los encabezados */
+.header-evidencia {
+    background-color: #4B698F;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-tipo {
+    background-color: #663A8F;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-descripcion {
+    background-color: #2F4F4F;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Colores específicos para cada tipo de celda */
+.celda-objetivo {
+    background-color: #0ed4aa;
+    font-weight: bold;
+}
+
+.celda-competencia {
+    background-color: #C6E0B4;
+    font-weight: bold;
+}
+
+.celda-competencia-especifica {
+    background-color: #F0F4C3;
+    font-weight: bold;
+}
+
+.celda-competencia-profesional {
+    background-color: #FFECB3;
+    font-weight: bold;
+}
+
+.celda-resultados {
+    background-color: #FFF9C4;
+    font-weight: bold;
+}
+
+.celda-criterios {
+    background-color: #FFE0B2;
+    font-weight: bold;
+}
+.celda-saberes {
+    background-color: #e2d773;
+    font-weight: bold;
+}
+
+.intro-text {
+    text-align: center; /* Centra el texto */
+    font-style: italic; /* Aplica letra cursiva */
+    font-size: 1.5em; /* Tamaño de fuente ajustado, puedes modificarlo según tus necesidades */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+table.custom-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
+}
+table.custom-table th {
+    background-color: #00796b; /* Color de encabezado */
+    color: #ffffff;
+    padding: 10px;
+}
+table.custom-table td {
+    background-color: #e0f2f1; /* Color de celdas */
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #00796b;
+}
+table.custom-table tr:nth-child(even) td {
+    background-color: #b2dfdb; /* Color de filas pares */
+}
+.table-title {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+.informatica {
+    background-color: #ffcccc; /* Color para seguridad informática */
+}
+
+.sistemas {
+    background-color: #7e9fca; /* Color para sistemas operativos */
+}
+
+.fol{
+    background-color: #ffe6ff; /* Color para aplicaciones web */
+}
+
+
+.ingles {
+    background-color: #f0f4c3; /* Color para inglés técnico */
+}
+
+
+/* Estilos personalizados para tablas de evaluación formativa y sumativa en MkDocs Material */
+
+/* Encabezado de la tabla */
+.md-typeset .custom-evaluation-table th {
+    background-color: #4CAF50; /* Color de fondo para el encabezado */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Columna de evaluación formativa */
+.md-typeset .custom-evaluation-table td:first-child {
+    background-color: #D9EAD3; /* Verde claro para formativa */
+    padding: 10px;
+}
+
+/* Columna de evaluación sumativa */
+.md-typeset .custom-evaluation-table td:last-child {
+    background-color: #F4CCCC; /* Rojo claro para sumativa */
+    padding: 10px;
+}
+
+/* Borde de la tabla */
+.md-typeset .custom-evaluation-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.md-typeset .custom-evaluation-table, 
+.md-typeset .custom-evaluation-table th, 
+.md-typeset .custom-evaluation-table td {
+    border: 1px solid #ddd;
+}
+
+.pyramid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+.level {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.level-1 { background-color: #3498db; width: 120%; }
+.level-2 { background-color: #2ecc71; width: 100%; }
+.level-3 { background-color: #f1c40f; width: 80%; }
+.level-4 { background-color: #e74c3c; width: 50%; }
+
+
+/* Encabezados principales de la actividad */
+.intro-text {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Tabla de la actividad */
+table.custom-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table.custom-table th {
+    background-color: #00796b;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+table.custom-table td {
+    background-color: #e0f2f1;
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #00796b;
+}
+
+/* Estilos alternos para filas pares */
+table.custom-table tr:nth-child(even) td {
+    background-color: #b2dfdb;
+}
+
+/* Encabezados específicos y sus colores */
+.header-evidencia {
+    background-color: #4B698F;
+    color: white;
+}
+
+.header-tipo {
+    background-color: #663A8F;
+    color: white;
+}
+
+.header-descripcion {
+    background-color: #2F4F4F;
+    color: white;
+}
+
+/* Colores específicos para cada tipo de celda */
+.celda-objetivo {
+    background-color: #0ed4aa;
+    font-weight: bold;
+}
+
+.celda-competencia {
+    background-color: #C6E0B4;
+    font-weight: bold;
+}
+
+.celda-competencia-especifica {
+    background-color: #F0F4C3;
+    font-weight: bold;
+}
+
+.celda-competencia-profesional {
+    background-color: #FFECB3;
+    font-weight: bold;
+}
+
+.celda-resultados {
+    background-color: #FFF9C4;
+    font-weight: bold;
+}
+
+.celda-criterios {
+    background-color: #FFE0B2;
+    font-weight: bold;
+}
+
+.celda-saberes {
+    background-color: #e2d773;
+    font-weight: bold;
+}
+
+
+.note-box {
+    background-color: #fff9c4;
+    border-left: 4px solid #ffeb3b;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #795548;
+}
+
+.delivery-section {
+    background-color: #f1f8e9;
+    border-left: 4px solid #8bc34a;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #33691e;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.concept-box {
+    border: 2px dashed #333;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.concept-box h2 {
+    background-color: #2E7D32;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.concept-box p {
+    margin: 10px 0;
+}
+.concept-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+.concept-box ul li {
+    font-weight: bold;
+}
+.context-box {
+    grid-column: span 3;
+    background-color: #d3e4cd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.grid-cards > * {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-cards > *:nth-child(1) { background-color: #f28b66; color: white; }
+.grid-cards > *:nth-child(2) { background-color: #b0b0b0; color: white; }
+.grid-cards > *:nth-child(3) { background-color: #ffc107; color: black; }
+.grid-cards > *:nth-child(4) { background-color: #4a90e2; color: white; }
+.grid-cards > *:nth-child(5) { background-color: #4caf50; color: white; }
+.grid-cards > *:nth-child(6) { background-color: #f28b66; color: white; }
+.grid-cards > *:nth-child(7) { background-color: #b0b0b0; color: white; }
+.grid-cards > *:nth-child(8) { background-color: #ffc107; color: black; }
+.grid-cards > *:nth-child(9) { background-color: #4a90e2; color: white; }
+.grid-cards > *:nth-child(10) { background-color: #4caf50; color: white; }
+.grid-cards > *:nth-child(11) { background-color: #f28b66; color: white; }
+.grid-cards > *:nth-child(12) { background-color: #b0b0b0; color: white; }
+.grid-cards > *:nth-child(13) { background-color: #ffc107; color: black; }
+.grid-cards > *:nth-child(14) { background-color: #4a90e2; color: white; }
+.grid-cards > *:nth-child(15) { background-color: #4caf50; color: white; }
+.grid-cards > *:nth-child(16) { background-color: #f28b66; color: white; }
+.grid-cards > *:nth-child(17) { background-color: #b0b0b0; color: white; }
+.grid-cards > *:nth-child(18) { background-color: #ffc107; color: black; }
+.grid-cards > *:nth-child(19) { background-color: #4a90e2; color: white; }
+.grid-cards > *:nth-child(20) { background-color: #4caf50; color: white; }

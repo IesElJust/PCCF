@@ -1,0 +1,117 @@
+site_name: Projecte Curricular del Cicle Formatiu
+
+theme: 
+  name: material
+  logo: "assets/img/logos/logoJust.png"
+  favicon: "assets/img/logos/logo50.ico"
+  language: ca
+  features:
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+  palette: 
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Mode oscur
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Mode clar
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+      auto_title: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - def_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - social:
+      cards_layout_options:
+        background_image: "assets/img/fondo.png"
+        background_color: "#0FF1CE8F"
+        text_color: "#000000"
+        button_color: "#000000"
+        button_text_color: "#FFFFFF"
+        button_text: "Més informació"
+  - add_tables:
+      ods_path: 'PCCF_FPB.ods'
+      xslt_path: 'ods2html.xslt'
+extra:
+  logo: |
+    <div class="md-logo-container">
+      <a href="https://portal.edu.gva.es/iesjaumeeljust/" target="_blank" class="logo-just"></a>
+      <a href="https://ceice.gva.es/va/web/educacion" target="_blank" class="logo-gvanext"></a>
+    </div>
+  social:
+    - icon: material/email
+      link: mailto:jb.talensfelis@edu.gva.es
+      name: Contacte
+  generator: false
+
+copyright: |
+  <div class="custom-footer">
+    <div class="footer-logo footer-left"></div>
+    <span class="footer-text">© 2025 Llicència CC BY-NC-SA 4.0</span>
+    <div class="footer-logo footer-right"></div>
+  </div>
+extra_css:
+  - styles/taules.css
+  - assets/stylesheets/extracsspdf.css
+  - assets/stylesheets/customs.css
+  - assets/stylesheets/extra.css
+
+
+
+nav:
+    - "1. Identificació del cicle Formatiu": '1.Identificacio.md'
+    - "2. Marc normatiu per al desplegament del projecte curricular": '2.Marc_normatiu.md'
+    - "3. Adequació i adaptació de les competències  professionals del títol al context socioeconòmic i cultural del centre": '3.adequacio_competencies.md'
+    - "4. Contribució de cada mòdul a les competències professionals del cicle": '4.controbucio_moduls_competencies.md'
+    - "5. Contribució de cada mòdul a les competències per a l'ocupabilitat": '5.contribucio_moduls_competencies_ocupabilitat.md'
+    - "6. Enfocaments didàctics i metodològics": '6.enfocaments_didactics.md'
+    - "7. Organització i distribució dels mòduls professionals": '7.organitzacio_moduls.md'
+    - "8. Criteris generals sobre l'organització, la comunicació i desenvolupament del procés d'avaluació de l'aprenentatge": '8.criteris_organitzacio_comunicacio.md'
+    - "9. Base de dades d'empreses o organismes equiparats que col·laboren amb el PCCF i  criteris d'assignació de l'alumnat": '9.base_dades_empreses.md'
+    - "10. Criteris per a realitzar els plans formatius individuals": '10.critesis_plans_indidivuals.md'
+    - "11. Criteris per a adaptar els mòduls de Digitalització i Sostenibilitat a les característiques específiques del perfil professional del cicle formatiu": '11.criteris_adaptar_moduls_sost_digitalitzacio.md'
+    - "12. El pla de tutoria i orientació professional": '12.pla_tutoria_orientacio.md'
+    - "13. Concreció dels plans i els programes del centre vinculats al currículum": '13.concrecio_plans_programes_centre.md'
+    - "14. Orientacions per a l'ús d'espais, mitjans i equipaments disponibles": '14.orientacions_us_espais.md'
+    - "15. Criteris i procediments per a l'avaluació i la revisió de la pràctica docent": '15.criteris_procediments_avaluacio_practica_docent.md'
+    - "16. Atenció a la diversitat i inclusió": '16.atencio_diversitat.md'
+    - "17. Criteris per a la planificació d'activitats complementàries i extraescolars": '17.cirteris_activitats_complementaries.md'
+    - "18. Criteris per a l'organització del mòdul professional de projecte": '18.criteris_organitzacio_md_projecte.md'
+    - "19. Altres aspectes que ha de contindre el PCCF": '19.alters_aspectes_pccf.md'
+    - "20. Les programacions didàctiques dels mòduls i/o els projectes": '20.programacions_didactiques.md'
+    # - "Annexos":
+    #   - "Annex 1 · Entrevista": 'annexos/Annex1-Entrevista.md'
+    #   - "Annex 2 · Interessos": 'annexos/Annex2-Interessos.md'
+    #   - "Annex 3 · Seguiment PAT": 'annexos/Annex3-SeguimentPAT.md'
+    #   - "Annex 4 · Enquesta Alumnat": 'annexos/Annex4-EnquestaAlumnat.md'
+    #   - "Annex · Autoavaluació Docent": 'annexos/Annex-Autoavaluacio-Docent.md'
+    #   - "Annex · Enquesta Alumnat": 'annexos/Annex-Enquesta-Alumnat.md'
+    #   - "Annex · Planificació Activitat": 'annexos/Annex-Planificacio-Activitat.md'
+    #   - "Annex · Valoració Activitat": 'annexos/Annex-Valoracio-Activitat.md'

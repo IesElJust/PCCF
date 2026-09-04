@@ -44,5 +44,6 @@ temp.*
 *.tmp
 
 # Altres directoris que només s'usen localment
+/tmp/
 pdf-images/
 Programacions/**/*.pdf

@@ -1,0 +1,58 @@
+site_name: "Programació didàctica · Tutoria de primer"
+
+theme:
+  name: material
+  logo: img/logo.svg
+  language: ca
+  features:
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Mode fosc
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Mode clar
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+  - add_tables:
+      ods_path: PCCF_FPB.ods
+      xslt_path: ods2html.xslt
+
+extra_css:
+  - styles/taules.css
+
+nav:
+  - "Inici": index.md
+  - "1. Contextualització": Context.md
+  - "2. Competències": Competencies.md
+  - "3. Resultats d'aprenentatge i competències": RACompetencies.md
+  - "4. Seqüenciació": Sequenciacio.md
+  - "5. Metodologia": Metodologia.md
+  - "6. Espais": Espais.md
+  - "7. Recursos": Recursos.md
+  - "8. Atenció a la diversitat": Diversitat.md
+  - "9. Avaluació": Avaluacio.md
+  - "10. Criteris d'avaluació": CriterisAvaluacio.md
+  - "11. Qualificació": Qualificacio.md
+  - "12. Activitats": Activitats.md
