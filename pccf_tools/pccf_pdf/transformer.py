@@ -366,7 +366,9 @@ def transform_sheet_to_html(ods_path, sheet_name):
 
 def process_markdown(markdown, ods_path, xslt_path=None):
     """Substitueix les marques {nom_full} per taules HTML de l'ODS."""
-    pattern = re.compile(r'\{([^}]+)\}(?:\s*"([^"]+)")?')
+    # Les marques de full ocupen una sola línia; no interpretem blocs de codi
+    # amb claus (p. ex. preguntes GIFT) com si foren taules ODS.
+    pattern = re.compile(r'\{([^}\n]+)\}(?:[ \t]*"([^"]+)")?')
 
     def replace_match(match):
         sheet_name = match.group(1).strip()

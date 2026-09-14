@@ -84,7 +84,7 @@
               <xsl:value-of select="$rowspan"/>
             </xsl:attribute>
           </xsl:if>
-          <xsl:value-of select="$value"/>
+          <xsl:copy-of select="$value"/>
         </xsl:element>
       </xsl:otherwise>
     </xsl:choose>
@@ -97,7 +97,7 @@
     <xsl:param name="count"/>
     <xsl:if test="$count &gt; 0">
       <xsl:element name="{$tag}">
-        <xsl:value-of select="$value"/>
+        <xsl:copy-of select="$value"/>
       </xsl:element>
       <xsl:call-template name="repeat-cell">
         <xsl:with-param name="tag" select="$tag"/>
@@ -110,6 +110,9 @@
   <!-- Text -->
   <xsl:template match="text:p">
     <xsl:value-of select="."/>
+    <xsl:if test="position() != last()">
+      <br/>
+    </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>

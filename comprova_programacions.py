@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Comprova que les programacions de moduls existeixen i son MkDocs."""
+"""Comprova les programacions definides en moduls.yaml com a projectes Zensical."""
 
 from __future__ import annotations
 
 import argparse
 import sys
+import tomllib
 import unicodedata
 from pathlib import Path
 from typing import Any
@@ -24,7 +25,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Llig moduls.yaml i comprova que cada modul tinga una carpeta "
-            "amb mkdocs.yml o mkdocs.yaml dins de Programacions."
+            "amb zensical.toml dins de Programacions."
         )
     )
     parser.add_argument(
@@ -129,11 +130,26 @@ def iter_expected_modules(data: dict[str, Any]) -> list[tuple[str, str | None, s
     return expected
 
 
-def mkdocs_config(path: Path) -> Path | None:
-    for filename in ("mkdocs.yml", "mkdocs.yaml"):
-        candidate = path / filename
-        if candidate.is_file():
-            return candidate
+def zensical_config(path: Path) -> Path | None:
+    candidate = path / "zensical.toml"
+    return candidate if candidate.is_file() else None
+
+
+def valid_zensical_config(path: Path) -> str | None:
+    """Retorna el problema de configuració, o None si és construïble."""
+    try:
+        with path.open("rb") as fh:
+            data = tomllib.load(fh)
+        project = data.get("project", {})
+        if not isinstance(project, dict) or not project.get("site_name"):
+            return "falta project.site_name"
+        docs_dir = Path(project.get("docs_dir", "docs"))
+        if docs_dir.is_absolute() or ".." in docs_dir.parts:
+            return "project.docs_dir no és una ruta relativa segura"
+        if not (path.parent / docs_dir).is_dir():
+            return f"no existeix {docs_dir}/"
+    except (OSError, ValueError, TypeError) as exc:
+        return str(exc)
     return None
 
 
@@ -208,7 +224,8 @@ def main() -> int:
     courses_by_cycle: dict[str, set[str]] = {}
     report: dict[tuple[str, str | None], dict[str, list[str]]] = {}
     missing: list[Path] = []
-    not_mkdocs: list[Path] = []
+    not_zensical: list[Path] = []
+    invalid: list[Path] = []
     ok = 0
 
     for cycle, course, module in expected:
@@ -219,7 +236,7 @@ def main() -> int:
             courses_by_cycle.setdefault(cycle, set()).add(course)
         group = report.setdefault(
             key,
-            {"ok": [], "missing": [], "not_mkdocs": [], "suggestions": []},
+            {"ok": [], "missing": [], "not_zensical": [], "invalid": [], "suggestions": []},
         )
 
         if not path.exists():
@@ -227,20 +244,29 @@ def main() -> int:
             group["missing"].append(module)
             parent = path.parent
             suggestions = possible_matches(parent, module)
+            if course in ("1r", "2n"):
+                other_course = "2n" if course == "1r" else "1r"
+                suggestions += possible_matches(programacions / cycle / other_course, module)
             if suggestions:
                 joined = ", ".join(str(item) for item in suggestions)
                 group["suggestions"].append(f"{module}: {joined}")
             continue
 
         if not path.is_dir():
-            not_mkdocs.append(path)
-            group["not_mkdocs"].append(f"{module} (no es carpeta: {path})")
+            not_zensical.append(path)
+            group["not_zensical"].append(f"{module} (no és carpeta: {path})")
             continue
 
-        config = mkdocs_config(path)
+        config = zensical_config(path)
         if config is None:
-            not_mkdocs.append(path)
-            group["not_mkdocs"].append(f"{module} ({path})")
+            not_zensical.append(path)
+            group["not_zensical"].append(f"{module} ({path})")
+            continue
+
+        problem = valid_zensical_config(config)
+        if problem:
+            invalid.append(path)
+            group["invalid"].append(f"{module} ({problem})")
             continue
 
         ok += 1
@@ -277,12 +303,13 @@ def main() -> int:
                 printed_groups.add(key)
                 group = report.get(
                     key,
-                    {"ok": [], "missing": [], "not_mkdocs": [], "suggestions": []},
+                    {"ok": [], "missing": [], "not_zensical": [], "invalid": [], "suggestions": []},
                 )
                 print(f"  {group_label(key[1])}")
                 print_module_list("Trobades", group["ok"])
                 print_module_list("Falten", group["missing"])
-                print_module_list("Sense MkDocs", group["not_mkdocs"])
+                print_module_list("Sense Zensical", group["not_zensical"])
+                print_module_list("TOML incorrecte", group["invalid"])
                 print_module_list("Possibles coincidencies", group["suggestions"])
                 print_module_list("No definides al YAML", extras_by_group.get(key, []))
 
@@ -291,9 +318,10 @@ def main() -> int:
     print(f"  Programacions esperades: {len(expected)}")
     print(f"  Correctes: {ok}")
     print(f"  Carpetes inexistents: {len(missing)}")
-    print(f"  Carpetes sense projecte MkDocs: {len(not_mkdocs)}")
+    print(f"  Carpetes sense projecte Zensical: {len(not_zensical)}")
+    print(f"  Configuracions Zensical incorrectes: {len(invalid)}")
 
-    return 1 if missing or not_mkdocs else 0
+    return 1 if missing or not_zensical or invalid else 0
 
 
 if __name__ == "__main__":

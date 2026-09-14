@@ -73,7 +73,7 @@ def discover_sites(root_dir):
 
     programmes = root_dir / "Programacions"
     for config in sorted(programmes.rglob("zensical.toml")):
-        if ".venv" in config.parts or not (config.parent / "mkdocs.yml").is_file():
+        if ".venv" in config.parts:
             continue
         relative = config.parent.relative_to(programmes)
         parts = relative.parts

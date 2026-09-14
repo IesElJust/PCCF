@@ -1,14 +1,9 @@
 from lxml import etree
 import re
 import zipfile
-import tempfile
-import os
 
-def extract_content_xml(ods_path, out_path=None):
-    """Extreu content.xml del fitxer ODS en un directori temporal multi-plataforma"""
-    if out_path is None:
-        out_path = os.path.join(tempfile.gettempdir(), "content.xml")
-
+def extract_content_xml(ods_path, out_path="/tmp/content.xml"):
+    """Extreu content.xml del fitxer ODS"""
     with zipfile.ZipFile(ods_path, "r") as z:
         with z.open("content.xml") as content:
             with open(out_path, "wb") as f:
@@ -35,11 +30,11 @@ def transform_sheet_to_html(xslt_path, content_xml_path, sheet_name):
         print(f"[XSLT ERROR - lxml] Full '{sheet_name}': {e}")
         return None
 
-
 def process_markdown(markdown, ods_path, xslt_path):
     """
     Substitueix les marques {nom_full} en el markdown pel resultat de l'XSLT.
     """
+
     pattern = re.compile(r'\{([^}]+)\}(?:\s*"([^"]+)")?')
     content_xml_path = extract_content_xml(ods_path)
 
