@@ -3,6 +3,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tomllib
 from importlib.resources import files
 from pathlib import Path
 
@@ -16,6 +17,25 @@ def resource_path(relative_path):
 
 
 def load_config(project_dir):
+    zensical_path = project_dir / "zensical.toml"
+    if zensical_path.is_file():
+        with zensical_path.open("rb") as file:
+            source = tomllib.load(file)
+        project = source.get("project", {})
+        navigation = source.get("navigation", {})
+        tables = source.get("pccf", {}).get("tables", {})
+        config = {
+            "site_name": project.get("site_name"),
+            "docs_dir": project.get("docs_dir", "docs"),
+            "nav": project.get("nav") or navigation.get("nav", []),
+        }
+        ods_path = tables.get("ods_path")
+        return (
+            config,
+            project_dir / ods_path if ods_path else None,
+            tables.get("xslt_path"),
+        )
+
     config_path = project_dir / "mkdocs.yml"
     if not config_path.is_file():
         raise FileNotFoundError(f"No s'ha trobat {config_path}")
@@ -32,10 +52,7 @@ def load_config(project_dir):
             xslt_path = add_tables.get("xslt_path")
             break
 
-    if not ods_path:
-        raise ValueError("No s'ha trobat plugins.add_tables.ods_path en mkdocs.yml")
-
-    return config, project_dir / ods_path, xslt_path
+    return config, project_dir / ods_path if ods_path else None, xslt_path
 
 
 def iter_nav_files(nav):
@@ -53,6 +70,8 @@ def iter_nav_files(nav):
 def render_markdown_to_html(markdown_file, ods_path, xslt_path):
     with markdown_file.open("r", encoding="utf-8") as file:
         markdown_content = file.read()
+    if ods_path is None:
+        return markdown_content
     return process_markdown(markdown_content, str(ods_path), str(xslt_path))
 
 
@@ -69,7 +88,7 @@ toc-title: Índex
 listings: true
 titlepage-rule-height: 0
 titlepage-text-color: "F08A2A"
-header-left: Departament d'Informàtica. Curs 2025-2026
+header-left: Departament d'Informàtica. Curs 2026-2027
 footer-left: IES Jaume II el Just. PCCF
 ---
 """
@@ -104,7 +123,7 @@ def generate_pdf(project_dir, output_pdf, keep_html=False, template=None, css=No
     project_dir = project_dir.resolve()
     config, ods_path, configured_xslt = load_config(project_dir)
 
-    if not ods_path.is_file():
+    if ods_path is not None and not ods_path.is_file():
         raise FileNotFoundError(f"No s'ha trobat l'ODS configurat: {ods_path}")
 
     template_path = Path(template) if template else Path(resource_path("templates/default.html"))
@@ -127,8 +146,12 @@ def generate_pdf(project_dir, output_pdf, keep_html=False, template=None, css=No
     else:
         all_markdown_content += default_front_matter(config, project_dir) + "\n"
 
-    for nav_file in iter_nav_files(config.get("nav", [])):
-        markdown_file = project_dir / "docs" / nav_file
+    nav = config.get("nav", [])
+    if not nav:
+        raise ValueError("No s'ha trobat la navegació del projecte en zensical.toml o mkdocs.yml.")
+    docs_dir = project_dir / config.get("docs_dir", "docs")
+    for nav_file in iter_nav_files(nav):
+        markdown_file = docs_dir / nav_file
         if markdown_file.is_file() and markdown_file.suffix == ".md":
             print(f"Processant fitxer markdown: {markdown_file}")
             all_markdown_content += render_markdown_to_html(markdown_file, ods_path, xslt_path)
@@ -138,39 +161,43 @@ def generate_pdf(project_dir, output_pdf, keep_html=False, template=None, css=No
 
     temp_markdown.write_text(all_markdown_content, encoding="utf-8")
 
-    ensure_pandoc()
-    subprocess.run(
-        pandoc_command(temp_markdown, temp_html, template_path, css_path),
-        check=True,
-        cwd=project_dir,
-    )
+    try:
+        ensure_pandoc()
+        subprocess.run(
+            pandoc_command(temp_markdown, temp_html, template_path, css_path),
+            check=True,
+            cwd=project_dir,
+        )
 
-    output_pdf = Path(output_pdf)
-    if not output_pdf.is_absolute():
-        output_pdf = project_dir / output_pdf
-    subprocess.run([sys.executable, "-m", "weasyprint", str(temp_html), str(output_pdf)], check=True)
+        output_pdf = Path(output_pdf)
+        if not output_pdf.is_absolute():
+            output_pdf = project_dir / output_pdf
+        output_pdf.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(
+            [sys.executable, "-m", "weasyprint", str(temp_html), str(output_pdf)],
+            check=True,
+        )
+        print(f"PDF generat correctament: {output_pdf}")
 
-    print(f"PDF generat correctament: {output_pdf}")
-
-    if keep_html:
-        print(f"Fitxer HTML temporal guardat: {temp_html}")
-        print(f"Fitxer Markdown temporal guardat: {temp_markdown}")
-        return
-
-    for temp_file in (temp_html, temp_markdown):
-        if temp_file.exists():
-            temp_file.unlink()
+        if keep_html:
+            print(f"Fitxer HTML temporal guardat: {temp_html}")
+            print(f"Fitxer Markdown temporal guardat: {temp_markdown}")
+    finally:
+        if not keep_html:
+            for temp_file in (temp_html, temp_markdown):
+                if temp_file.exists():
+                    temp_file.unlink()
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Genera el PDF d'un projecte PCCF/Programacio MkDocs."
+        description="Genera el PDF d'un projecte PCCF/Programació Zensical o MkDocs."
     )
     parser.add_argument("output_pdf", nargs="?", default="output.pdf")
     parser.add_argument(
         "--project-dir",
         default=os.getcwd(),
-        help="Directori del projecte amb mkdocs.yml. Per defecte, el directori actual.",
+        help="Directori amb zensical.toml o mkdocs.yml. Per defecte, el directori actual.",
     )
     parser.add_argument("--keep-html", action="store_true")
     parser.add_argument("--template", help="Plantilla HTML de Pandoc alternativa.")

@@ -25,7 +25,7 @@ jobs:
   build:
     name: Genera els llocs Zensical
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       # Descarrega el contingut de la branca que ha iniciat l'execució.
@@ -46,6 +46,12 @@ jobs:
       - name: Crea l'entorn virtual
         run: python -m venv venv
 
+      # Pandoc prepara l'HTML únic que WeasyPrint converteix en PDF.
+      - name: Instal·la Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes pandoc
+
       - name: Instal·la les dependències
         run: |
           venv/bin/python -m pip install --upgrade pip
@@ -57,11 +63,12 @@ jobs:
         run: |
           venv/bin/python --version
           venv/bin/zensical --version
+          pandoc --version | head -n 1
           venv/bin/pccf-zensical-full-build --help >/dev/null
 
-      # Genera la landing i tots els PCCF i programacions dins zensical_full_doc.
-      # No usem --fail-on-error perquè actualment SMX/DIG no disposa d'ODS; la
-      # landing l'identifica com a no disponible i publica la resta del material.
+      # Genera la landing, els llocs i els PDF dins zensical_full_doc.
+      # No usem --fail-on-error: un projecte defectuós no bloqueja la publicació
+      # de la resta, i un error exclusiu de PDF tampoc impedeix publicar el lloc.
       - name: Genera la documentació completa
         run: venv/bin/pccf-zensical-full-build --strict
 
@@ -72,6 +79,7 @@ jobs:
           test -f zensical_full_doc/index.css
           test -f zensical_full_doc/logo_gran.png
           test -f zensical_full_doc/.nojekyll
+          test -n "$(find zensical_full_doc -name document.pdf -print -quit)"
 
       # Prepara les metadades de Pages i empaqueta únicament el lloc generat.
       - name: Configura GitHub Pages

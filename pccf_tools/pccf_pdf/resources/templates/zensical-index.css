@@ -73,11 +73,15 @@ main { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 4rem 0 6r
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .85rem; }
 .cards--pccf { grid-template-columns: minmax(240px, 420px); }
-.card { display: flex; min-height: 145px; flex-direction: column; padding: 1.1rem; color: inherit; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 13px; text-decoration: none; transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease; }
-a.card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 12px 25px rgba(70, 42, 120, .12); }
+.card { display: flex; min-height: 145px; flex-direction: column; padding: 1.1rem; color: inherit; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 13px; transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease; }
+.card:not(.card--error):hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 12px 25px rgba(70, 42, 120, .12); }
+.card__main { color: inherit; text-decoration: none; }
 .card__code { align-self: flex-start; padding: .22rem .5rem; color: var(--primary); background: var(--accent); border-radius: 6px; font-size: .74rem; font-weight: 850; letter-spacing: .04em; }
 .card h5 { margin: .72rem 0 .9rem; font-size: .98rem; line-height: 1.35; }
-.card__action, .card__status { margin-top: auto; color: var(--primary); font-size: .8rem; font-weight: 760; }
+.card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .8rem; margin-top: auto; }
+.card__action, .card__status { color: var(--primary); font-size: .8rem; font-weight: 760; text-decoration: none; }
+.card__action--pdf { padding: .32rem .52rem; color: #fff; background: var(--primary); border-radius: 6px; }
+.card__pdf-error { color: var(--muted); font-size: .74rem; font-weight: 650; }
 .card--error { border-color: #e1a5a5; background: #fff4f4; }
 .card--error p { margin: 0 0 .8rem; color: #7e4141; font-size: .78rem; }
 .card--error .card__status { color: #9b3434; }

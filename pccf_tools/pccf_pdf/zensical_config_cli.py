@@ -50,7 +50,7 @@ def find_tables_config(plugins):
             if not config.get("ods_path"):
                 break
             return config["ods_path"], config.get("xslt_path")
-    raise ValueError("No s'ha trobat plugins.add_tables.ods_path en el mkdocs.yml.")
+    return None, None
 
 
 def markdown_extension_sections(extensions):
@@ -134,9 +134,10 @@ def render_zensical_config(mkdocs_config):
             raise TypeError(f"La configuració de {name} ha de ser un mapa.")
         lines.extend(f"{key} = {toml_value(value)}" for key, value in config.items())
 
-    lines.extend(["", "[pccf.tables]", f"ods_path = {toml_string(ods_path)}"])
-    if xslt_path:
-        lines.append(f"xslt_path = {toml_string(xslt_path)}")
+    if ods_path:
+        lines.extend(["", "[pccf.tables]", f"ods_path = {toml_string(ods_path)}"])
+        if xslt_path:
+            lines.append(f"xslt_path = {toml_string(xslt_path)}")
     return "\n".join(lines) + "\n"
 
 

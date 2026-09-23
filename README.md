@@ -193,9 +193,19 @@ El resultat es publica en `zensical_full_doc/`. La portada és `index.html`, els
 PCCF queden en `PCCF/` i les programacions en `Moduls/`, mantenint l'estructura
 de cicle i curs. La generació es fa en una carpeta temporal i només reemplaça
 l'eixida global quan ha acabat. Si algun projecte falla, la portada l'identifica
-com a no disponible i la resta de llocs continuen accessibles.
+com a no disponible i la resta de llocs continuen accessibles. Per defecte,
+també genera `document.pdf` dins de cada lloc, incorpora un botó de descàrrega
+en la seua portada i un segon accés des de la targeta de l'índex general. Si
+falla únicament un PDF, el lloc web es publica igualment i la landing indica
+que el PDF no està disponible.
 Per fer que la comanda retorne un codi d'error en eixe cas, es pot afegir
 `--fail-on-error`.
+
+Per fer una construcció local més ràpida sense generar els PDF:
+
+```bash
+venv/bin/pccf-zensical-full-build --strict --no-pdf
+```
 
 L'estructura i l'estil de la portada es poden personalitzar en les plantilles
 `pccf_tools/pccf_pdf/resources/templates/zensical-index.html` i
@@ -209,7 +219,8 @@ GitHub Pages.
 
 ### Opció recomanada: generador centralitzat
 
-Amb l'entorn virtual activat, podem generar el PDF des de qualsevol projecte que continga un `mkdocs.yml`:
+Amb l'entorn virtual activat, podem generar el PDF des de qualsevol projecte
+que continga un `zensical.toml` o, per compatibilitat, un `mkdocs.yml`:
 
 ```bash
 cd Programacions/SMX/2n/SOX
@@ -228,13 +239,19 @@ Per conservar els fitxers intermedis `generated_content.md` i `generated_content
 pccf-genera-pdf SOX.pdf --keep-html
 ```
 
-El generador centralitzat utilitza:
+El generador centralitzat utilitza preferentment:
 
-* El `mkdocs.yml` del projecte.
-* El `nav` del `mkdocs.yml` per saber quins fitxers Markdown concatenar.
-* L'ODS indicat en `plugins.add_tables.ods_path`.
+* El `zensical.toml` i la navegació que hi ha definida.
+* La secció opcional `[pccf.tables]` per incorporar les taules de l'ODS.
 * El `templates/front-matter.md` local del projecte, si existeix.
 * Els recursos compartits de `pccf_tools` per a la plantilla, CSS, imatges i tipografies.
+
+Quan no hi ha `pccf.tables.ods_path`, els Markdown es processen directament i
+es conserven les taules que ja estiguen embegudes. Si no existeix
+`zensical.toml`, es manté el comportament compatible amb `mkdocs.yml`.
+
+La construcció global i el workflow de GitHub Pages generen automàticament
+estos PDF; no cal guardar-los ni incorporar-los manualment al repositori.
 
 ### Opció compatible: script local `genera_pdf.py`
 

@@ -9,6 +9,7 @@ from datetime import datetime
 from importlib.resources import files
 from pathlib import Path
 
+from .cli import generate_pdf
 from .zensical_cli import build_zensical_site
 
 
@@ -42,6 +43,8 @@ class Site:
     code: str | None = None
     kind: str = "module"
     error: str | None = None
+    pdf_available: bool = False
+    pdf_error: str | None = None
 
     @property
     def url(self):
@@ -104,11 +107,70 @@ def card(site):
             f'<h5>{title}</h5><p>{html.escape(site.error)}</p>'
             '<span class="card__status">No disponible</span></article>'
         )
+    pdf_action = ""
+    if site.pdf_available:
+        pdf_action = (
+            f'<a class="card__action card__action--pdf" '
+            f'href="{html.escape(site.url)}document.pdf" download>Descarrega el PDF ↓</a>'
+        )
+    elif site.pdf_error:
+        pdf_action = (
+            f'<span class="card__pdf-error" title="{html.escape(site.pdf_error)}">'
+            "PDF no disponible</span>"
+        )
     return (
-        f'<a class="card" href="{html.escape(site.url)}">'
-        f'<span class="card__code">{code}</span>'
-        f'<h5>{title}</h5><span class="card__action">Obri la documentació →</span></a>'
+        '<article class="card">'
+        f'<a class="card__main" href="{html.escape(site.url)}">'
+        f'<span class="card__code">{code}</span><h5>{title}</h5></a>'
+        '<div class="card__actions">'
+        f'<a class="card__action" href="{html.escape(site.url)}">Obri la documentació →</a>'
+        f'{pdf_action}</div></article>'
     )
+
+
+PDF_DOWNLOAD_CSS = """
+.pccf-pdf-download {
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  max-width: 61rem;
+}
+.pccf-pdf-download a {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .55rem .9rem;
+  border-radius: .4rem;
+  color: var(--md-primary-bg-color, #fff);
+  background: var(--md-primary-fg-color, #6041a5);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 .15rem .4rem rgba(0, 0, 0, .12);
+}
+.pccf-pdf-download a:hover { filter: brightness(1.08); }
+""".strip()
+
+
+def add_pdf_download_to_site(site_dir):
+    index_path = site_dir / "index.html"
+    if not index_path.is_file():
+        raise FileNotFoundError(f"No s'ha trobat la portada Zensical: {index_path}")
+    source = index_path.read_text(encoding="utf-8")
+    stylesheet = '<link rel="stylesheet" href="pccf-pdf-download.css">'
+    banner = (
+        '<aside class="pccf-pdf-download" aria-label="Descàrrega del document">'
+        '<a href="document.pdf" download>Descarrega el document complet en PDF ↓</a>'
+        "</aside>"
+    )
+    if "</head>" not in source:
+        raise ValueError(f"La portada no conté </head>: {index_path}")
+    source = source.replace("</head>", f"  {stylesheet}\n</head>", 1)
+    main_start = source.find('<main class="md-main"')
+    main_end = source.find(">", main_start)
+    if main_start == -1 or main_end == -1:
+        raise ValueError(f"La portada no conté el bloc principal esperat: {index_path}")
+    source = source[: main_end + 1] + "\n" + banner + source[main_end + 1 :]
+    index_path.write_text(source, encoding="utf-8")
+    (site_dir / "pccf-pdf-download.css").write_text(PDF_DOWNLOAD_CSS + "\n", encoding="utf-8")
 
 
 def cycle_section(cycle, sites):
@@ -186,7 +248,13 @@ def publish_directory(staging, destination):
             shutil.rmtree(backup)
 
 
-def build_full_documentation(root_dir, output_dir="zensical_full_doc", zensical=None, strict=False):
+def build_full_documentation(
+    root_dir,
+    output_dir="zensical_full_doc",
+    zensical=None,
+    strict=False,
+    with_pdf=True,
+):
     root_dir = Path(root_dir).resolve()
     output_dir = Path(output_dir)
     if not output_dir.is_absolute():
@@ -211,7 +279,16 @@ def build_full_documentation(root_dir, output_dir="zensical_full_doc", zensical=
                     zensical=zensical,
                     strict=strict,
                 )
-                shutil.copytree(generated, staging / site.destination)
+                destination = staging / site.destination
+                shutil.copytree(generated, destination)
+                if with_pdf:
+                    try:
+                        generate_pdf(site.project_dir, destination / "document.pdf")
+                        add_pdf_download_to_site(destination)
+                        site.pdf_available = True
+                    except Exception as exc:
+                        site.pdf_error = str(exc).replace(f"{root_dir}{os.sep}", "")
+                        print(f"  AVÍS PDF: {site.pdf_error}")
             except Exception as exc:
                 site.error = str(exc).replace(f"{root_dir}{os.sep}", "")
                 print(f"  ERROR: {site.error}")
@@ -235,10 +312,15 @@ def build_full_documentation(root_dir, output_dir="zensical_full_doc", zensical=
         publish_directory(staging, output_dir)
 
     failures = [site for site in sites if site.error]
+    pdf_failures = [site for site in sites if site.pdf_error]
     print(f"Documentació global generada: {output_dir}")
     print(f"Projectes correctes: {len(sites) - len(failures)}/{len(sites)}")
     if failures:
         print(f"Projectes no disponibles: {len(failures)}")
+    if with_pdf:
+        print(f"PDF correctes: {len(sites) - len(failures) - len(pdf_failures)}/{len(sites) - len(failures)}")
+        if pdf_failures:
+            print(f"PDF no disponibles: {len(pdf_failures)}")
     return output_dir, failures
 
 
@@ -252,6 +334,11 @@ def parse_args():
     )
     parser.add_argument("--zensical", help="Ruta alternativa al binari de Zensical.")
     parser.add_argument("--strict", action="store_true", help="Activa la compilació estricta.")
+    parser.add_argument(
+        "--no-pdf",
+        action="store_true",
+        help="No genera els PDF ni els botons de descàrrega.",
+    )
     parser.add_argument(
         "--fail-on-error",
         action="store_true",
@@ -267,6 +354,7 @@ def main():
         output_dir=args.output_dir,
         zensical=args.zensical,
         strict=args.strict,
+        with_pdf=not args.no_pdf,
     )
     if failures and args.fail_on_error:
         raise SystemExit(1)

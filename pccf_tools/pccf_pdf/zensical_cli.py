@@ -29,11 +29,9 @@ def load_zensical_config(config_path):
     site_dir = relative_project_path(project.get("site_dir", "site"), "project.site_dir")
 
     tables = config.get("pccf", {}).get("tables", {})
-    if not tables.get("ods_path"):
-        raise ValueError(
-            "Falta pccf.tables.ods_path en el fitxer de configuració Zensical."
-        )
-    ods_path = relative_project_path(tables["ods_path"], "pccf.tables.ods_path")
+    ods_path = tables.get("ods_path")
+    if ods_path:
+        ods_path = relative_project_path(ods_path, "pccf.tables.ods_path")
     xslt_path = tables.get("xslt_path")
     if xslt_path:
         xslt_path = relative_project_path(xslt_path, "pccf.tables.xslt_path")
@@ -86,12 +84,13 @@ def prepare_staging_project(project_dir, config_path, staging_dir, docs_dir, ods
     shutil.copy2(config_path, staging_dir / DEFAULT_CONFIG)
 
     replaced_files = 0
-    for markdown_file in staging_docs.rglob("*.md"):
-        original = markdown_file.read_text(encoding="utf-8")
-        rendered = process_markdown(original, str(ods_path), str(xslt_path))
-        if rendered != original:
-            markdown_file.write_text(rendered, encoding="utf-8")
-            replaced_files += 1
+    if ods_path is not None:
+        for markdown_file in staging_docs.rglob("*.md"):
+            original = markdown_file.read_text(encoding="utf-8")
+            rendered = process_markdown(original, str(ods_path), str(xslt_path))
+            if rendered != original:
+                markdown_file.write_text(rendered, encoding="utf-8")
+                replaced_files += 1
     return replaced_files
 
 
@@ -128,14 +127,9 @@ def build_zensical_site(project_dir, config_name=DEFAULT_CONFIG, zensical=None, 
     zensical_config, docs_dir, site_dir, configured_ods, configured_xslt = (
         load_zensical_config(config_path)
     )
-    ods_path = project_dir / configured_ods
-    if not ods_path.is_file():
-        ods_candidates = sorted(project_dir.glob("*.ods"))
-        if len(ods_candidates) == 1:
-            ods_path = ods_candidates[0]
-            print(f"AVÍS: s'utilitza l'únic ODS disponible: {ods_path.name}")
-        else:
-            raise FileNotFoundError(f"No s'ha trobat l'ODS configurat: {ods_path}")
+    ods_path = project_dir / configured_ods if configured_ods else None
+    if ods_path is not None and not ods_path.is_file():
+        raise FileNotFoundError(f"No s'ha trobat l'ODS configurat: {ods_path}")
 
     xslt_path = project_dir / configured_xslt if configured_xslt else None
     if xslt_path is not None and not xslt_path.is_file():
@@ -159,7 +153,10 @@ def build_zensical_site(project_dir, config_name=DEFAULT_CONFIG, zensical=None, 
         subprocess.run(command, cwd=staging_dir, check=True)
         publish_site(staging_dir / site_dir, project_dir / site_dir)
 
-    print(f"Taules ODS incorporades en {replaced_files} fitxers Markdown.")
+    if ods_path is None:
+        print("Projecte sense pccf.tables.ods_path: no cal incorporar taules ODS.")
+    else:
+        print(f"Taules ODS incorporades en {replaced_files} fitxers Markdown.")
     print(f"Lloc Zensical generat: {project_dir / site_dir}")
     return project_dir / site_dir
 
