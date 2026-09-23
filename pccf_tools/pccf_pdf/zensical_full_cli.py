@@ -1,6 +1,7 @@
 import argparse
 import html
 import os
+import re
 import shutil
 import tempfile
 import tomllib
@@ -49,6 +50,20 @@ class Site:
     @property
     def url(self):
         return self.destination.as_posix() + "/"
+
+    @property
+    def pdf_filename(self):
+        def safe(value):
+            return re.sub(r"[^A-Za-z0-9_.-]+", "_", value).strip("_.")
+
+        cycle = safe(self.cycle)
+        if self.kind == "pccf":
+            return f"PCCF_{cycle}.pdf"
+        code = safe(self.code or self.project_dir.name)
+        if self.course:
+            course = {"1r": "1", "2n": "2"}.get(self.course, safe(self.course))
+            return f"{cycle}{course}_{code}.pdf"
+        return f"{cycle}_{code}.pdf"
 
 
 def site_title(config_path):
@@ -111,7 +126,8 @@ def card(site):
     if site.pdf_available:
         pdf_action = (
             f'<a class="card__action card__action--pdf" '
-            f'href="{html.escape(site.url)}document.pdf" download>Descarrega el PDF ↓</a>'
+            f'href="{html.escape(site.url + site.pdf_filename)}" download>'
+            "Descarrega el PDF ↓</a>"
         )
     elif site.pdf_error:
         pdf_action = (
@@ -150,7 +166,7 @@ PDF_DOWNLOAD_CSS = """
 """.strip()
 
 
-def add_pdf_download_to_site(site_dir):
+def add_pdf_download_to_site(site_dir, pdf_filename):
     index_path = site_dir / "index.html"
     if not index_path.is_file():
         raise FileNotFoundError(f"No s'ha trobat la portada Zensical: {index_path}")
@@ -158,7 +174,8 @@ def add_pdf_download_to_site(site_dir):
     stylesheet = '<link rel="stylesheet" href="pccf-pdf-download.css">'
     banner = (
         '<aside class="pccf-pdf-download" aria-label="Descàrrega del document">'
-        '<a href="document.pdf" download>Descarrega el document complet en PDF ↓</a>'
+        f'<a href="{html.escape(pdf_filename, quote=True)}" download>'
+        "Descarrega el document complet en PDF ↓</a>"
         "</aside>"
     )
     if "</head>" not in source:
@@ -283,8 +300,8 @@ def build_full_documentation(
                 shutil.copytree(generated, destination)
                 if with_pdf:
                     try:
-                        generate_pdf(site.project_dir, destination / "document.pdf")
-                        add_pdf_download_to_site(destination)
+                        generate_pdf(site.project_dir, destination / site.pdf_filename)
+                        add_pdf_download_to_site(destination, site.pdf_filename)
                         site.pdf_available = True
                     except Exception as exc:
                         site.pdf_error = str(exc).replace(f"{root_dir}{os.sep}", "")

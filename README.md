@@ -194,7 +194,8 @@ PCCF queden en `PCCF/` i les programacions en `Moduls/`, mantenint l'estructura
 de cicle i curs. La generació es fa en una carpeta temporal i només reemplaça
 l'eixida global quan ha acabat. Si algun projecte falla, la portada l'identifica
 com a no disponible i la resta de llocs continuen accessibles. Per defecte,
-també genera `document.pdf` dins de cada lloc, incorpora un botó de descàrrega
+també genera un PDF amb un nom descriptiu dins de cada lloc —per exemple,
+`SMX1_AOF.pdf`, `DAM2_CLOUD.pdf` o `PCCF_DAM.pdf`—, incorpora un botó de descàrrega
 en la seua portada i un segon accés des de la targeta de l'índex general. Si
 falla únicament un PDF, el lloc web es publica igualment i la landing indica
 que el PDF no està disponible.

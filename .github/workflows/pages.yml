@@ -79,7 +79,7 @@ jobs:
           test -f zensical_full_doc/index.css
           test -f zensical_full_doc/logo_gran.png
           test -f zensical_full_doc/.nojekyll
-          test -n "$(find zensical_full_doc -name document.pdf -print -quit)"
+          test -n "$(find zensical_full_doc -name '*.pdf' -print -quit)"
 
       # Prepara les metadades de Pages i empaqueta únicament el lloc generat.
       - name: Configura GitHub Pages
