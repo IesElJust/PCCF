@@ -29,5 +29,5 @@ toggle.name = "Canvia al mode clar"
 custom_checkbox = true
 
 [pccf.tables]
-ods_path = "PD_MME.ods"
+ods_path = "PD_SOM.ods"
 xslt_path = "ods2html.xslt"

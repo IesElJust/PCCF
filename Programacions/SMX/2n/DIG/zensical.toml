@@ -28,6 +28,6 @@ toggle.name = "Canvia al mode clar"
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
 
-[pccf.tables]
-ods_path = "PD_DIGITILITZACIO.ods"
-xslt_path = "ods2html.xslt"
+#[pccf.tables]
+#ods_path = "PD_DIGITILITZACIO.ods"
+#xslt_path = "ods2html.xslt"
