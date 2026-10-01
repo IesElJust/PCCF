@@ -208,6 +208,18 @@ Per fer una construcció local més ràpida sense generar els PDF:
 venv/bin/pccf-zensical-full-build --strict --no-pdf
 ```
 
+Per reconstruir tota la documentació i obtindre, a més, una còpia ordenada de
+tots els PDF, es pot executar:
+
+```bash
+./genera_carpeta_pdfs.sh
+```
+
+La comanda manté el lloc complet en `zensical_full_doc/` i crea
+`PDFs/generats/PCCF/` i `PDFs/generats/Programacions/`, respectant l'estructura
+de cicles, cursos i mòduls. El nom antic `./genera_pdfs.sh` es conserva com a
+àlies del mateix procés.
+
 L'estructura i l'estil de la portada es poden personalitzar en les plantilles
 `pccf_tools/pccf_pdf/resources/templates/zensical-index.html` i
 `pccf_tools/pccf_pdf/resources/templates/zensical-index.css`.

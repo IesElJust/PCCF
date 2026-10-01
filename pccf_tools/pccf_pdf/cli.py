@@ -94,11 +94,13 @@ footer-left: IES Jaume II el Just. PCCF
 """
 
 
-def pandoc_command(input_file, output_file, template_path, css_path):
+def pandoc_command(input_file, output_file, template_path, css_path, resource_paths):
     return [
         "pandoc",
         "-s",
         f"--template={template_path}",
+        f"--resource-path={os.pathsep.join(str(path) for path in resource_paths)}",
+        "--embed-resources",
         "-f",
         "markdown-smart+raw_html",
         "--toc",
@@ -164,7 +166,13 @@ def generate_pdf(project_dir, output_pdf, keep_html=False, template=None, css=No
     try:
         ensure_pandoc()
         subprocess.run(
-            pandoc_command(temp_markdown, temp_html, template_path, css_path),
+            pandoc_command(
+                temp_markdown,
+                temp_html,
+                template_path,
+                css_path,
+                (docs_dir, project_dir),
+            ),
             check=True,
             cwd=project_dir,
         )

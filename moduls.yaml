@@ -75,6 +75,15 @@ DAW:
         - SOST
     - PIM
 CE_CIBER:
-    - 
+    - IC
+    - BS
+    - AFS
+    - PPS
+    - HE 
 
 CE_IA_BIGDATA:
+    - BDA
+    - PIA
+    - MIA
+    - SBD
+    - SAA

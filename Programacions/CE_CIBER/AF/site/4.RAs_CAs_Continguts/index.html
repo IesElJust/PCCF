@@ -1,0 +1,774 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.invalid/ceti-5024-analisi-forense-informatica/4.RAs_CAs_Continguts/">
+      
+      
+        <link rel="prev" href="../3.contribucio_ra/">
+      
+      
+        <link rel="next" href="../5.esquema_general_up/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.55">
+    
+    
+      
+        <title>04. Resultats d'aprenentatge, criteris d'avaluació i continguts - Programació didàctica - Anàlisi forense informàtica</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/classic/main.39e53929.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navegació"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-resultats-daprenentatge-criteris-davaluacio-i-continguts" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="./.." title="Programació didàctica - Anàlisi forense informàtica" class="md-header__button md-logo" aria-label="Programació didàctica - Anàlisi forense informàtica" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="Programació didàctica - Anàlisi forense informàtica">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navegació">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació didàctica - Anàlisi forense informàtica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04. Resultats d'aprenentatge, criteris d'avaluació i continguts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Canvia a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Canvia a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Cerca">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Cerca">
+  <button type="button" class="md-search__button">
+    Cerca
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Programació didàctica - Anàlisi forense informàtica" class="md-nav__button md-logo" aria-label="Programació didàctica - Anàlisi forense informàtica" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="Programació didàctica - Anàlisi forense informàtica">
+
+    </a>
+    Programació didàctica - Anàlisi forense informàtica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Programació didàctica
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.Identificacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  01. Dades identificatives i contextualització
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.Avaluacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  10. Avaluació de l'aprenentatge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.Activitats_Complementaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  11. Activitats complementàries i extraescolars
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12.Procediments_Avaluacio_PD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  12. Procediments per a l'avaluació de la programació i la pràctica docent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.Marc_normatiu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  02. Marc normatiu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.contribucio_ra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  03. Contribució dels RA a les competències professionals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  04. Resultats d'aprenentatge, criteris d'avaluació i continguts
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  04. Resultats d'aprenentatge, criteris d'avaluació i continguts
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resultats-daprenentatge-i-criteris-davaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resultats d'aprenentatge i criteris d'avaluació
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continguts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Continguts
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.esquema_general_up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  05. Esquema general i seqüenciació de les UP
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.Metodologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  06. Metodologia
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.Recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  07. Recursos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.Espais_equipament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  08. Espais i equipament
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.Mesures_Atencio_Diversitat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  09. Mesures d'atenció a la diversitat i inclusió
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resultats-daprenentatge-i-criteris-davaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resultats d'aprenentatge i criteris d'avaluació
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continguts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Continguts
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="04-resultats-daprenentatge-criteris-davaluacio-i-continguts">04. Resultats d'aprenentatge, criteris d'avaluació i continguts<a class="headerlink" href="#04-resultats-daprenentatge-criteris-davaluacio-i-continguts" title="Permanent link">&para;</a></h1>
+<h2 id="resultats-daprenentatge-i-criteris-davaluacio">Resultats d'aprenentatge i criteris d'avaluació<a class="headerlink" href="#resultats-daprenentatge-i-criteris-davaluacio" title="Permanent link">&para;</a></h2>
+<p>Els RA i CA següents procedixen del Reial decret 479/2020 i constituïxen el referent prescriptiu per a l'ensenyament i l'avaluació del mòdul.</p>
+<div class="table-ra-compact">
+
+<table class="pdf-table">
+<thead><tr><th>Resultat d&#x27;aprenentatge</th><th>Criteris d&#x27;avaluació</th></tr></thead>
+<tbody><tr><td><span class="ods-list-item"><span class="ods-list-marker">RA1.</span> <span class="ods-list-content">Aplica metodologies d&#x27;anàlisi forense caracteritzant les fases de preservació, adquisició, anàlisi i documentació.</span></span></td><td>CA1.a) S&#x27;han identificat els dispositius que s&#x27;han d&#x27;analitzar per garantir la preservació d&#x27;evidències.<br>CA1.b) S&#x27;han utilitzat els mecanismes i les ferramentes adequades per a l&#x27;adquisició i extracció de les evidències.<br>CA1.c) S&#x27;ha assegurat l&#x27;escena i conservat la cadena de custòdia.<br>CA1.d) S&#x27;ha documentat el procés realitzat de manera metòdica.<br>CA1.e) S&#x27;ha considerat la línia temporal de les evidències.<br>CA1.f) S&#x27;ha elaborat un informe de conclusions a escala tècnica i executiva.<br>CA1.g) S&#x27;han presentat i exposat les conclusions de l&#x27;anàlisi forense realitzada.</td></tr>
+<tr><td><span class="ods-list-item"><span class="ods-list-marker">RA2.</span> <span class="ods-list-content">Realitza anàlisis forenses en dispositius mòbils, aplicant metodologies establides, actualitzades i reconegudes.</span></span></td><td>CA2.a) S&#x27;ha realitzat el procés de presa d&#x27;evidències en un dispositiu mòbil.<br>CA2.b) S&#x27;han extret, descodificat i analitzat les proves conservant la cadena de custòdia.<br>CA2.c) S&#x27;han generat informes de dades mòbils, complint els requisits de la indústria forense de telefonia mòbil.<br>CA2.d) S&#x27;han presentat i exposat les conclusions de l&#x27;anàlisi forense realitzada a qui corresponga.</td></tr>
+<tr><td><span class="ods-list-item"><span class="ods-list-marker">RA3.</span> <span class="ods-list-content">Realitza anàlisis forenses en el núvol, aplicant metodologies establides, actualitzades i reconegudes.</span></span></td><td>CA3.a) S&#x27;ha desenvolupat una estratègia d&#x27;anàlisi forense en el núvol, assegurant la disponibilitat dels recursos i capacitats necessaris una vegada ocorregut l&#x27;incident.<br>CA3.b) S&#x27;han identificat les causes, l&#x27;abast i l&#x27;impacte real causat per l&#x27;incident.<br>CA3.c) S&#x27;han realitzat les fases de l&#x27;anàlisi forense en el núvol.<br>CA3.d) S&#x27;han identificat les característiques intrínseques del núvol: elasticitat, ubiqüitat, abstracció, volatilitat i compartició de recursos.<br>CA3.e) S&#x27;han complit els requeriments legals vigents, RGPD i Directiva NIS, o les normes que eventualment les substituïsquen.<br>CA3.f) S&#x27;han presentat i exposat les conclusions de l&#x27;anàlisi forense realitzada.</td></tr>
+<tr><td><span class="ods-list-item"><span class="ods-list-marker">RA4.</span> <span class="ods-list-content">Realitza anàlisis forenses en dispositius IoT, aplicant metodologies establides, actualitzades i reconegudes.</span></span></td><td>CA4.a) S&#x27;han identificat els dispositius que s&#x27;han d&#x27;analitzar garantint la preservació de les evidències.<br>CA4.b) S&#x27;han utilitzat mecanismes i ferramentes adequades per a l&#x27;adquisició i extracció d&#x27;evidències.<br>CA4.c) S&#x27;ha garantit l&#x27;autenticitat, completesa, fiabilitat i legalitat de les evidències extretes.<br>CA4.d) S&#x27;han realitzat anàlisis d&#x27;evidències de manera manual i mitjançant ferramentes.<br>CA4.e) S&#x27;ha documentat el procés de manera metòdica i detallada.<br>CA4.f) S&#x27;ha considerat la línia temporal de les evidències.<br>CA4.g) S&#x27;ha mantingut la cadena de custòdia.<br>CA4.h) S&#x27;ha elaborat un informe de conclusions a escala tècnica i executiva.<br>CA4.i) S&#x27;han presentat i exposat les conclusions de l&#x27;anàlisi forense realitzada.</td></tr>
+<tr><td><span class="ods-list-item"><span class="ods-list-marker">RA5.</span> <span class="ods-list-content">Documenta anàlisis forenses elaborant informes que inclouen la normativa aplicable.</span></span></td><td>CA5.a) S&#x27;ha definit l&#x27;objectiu de l&#x27;informe pericial i la seua justificació.<br>CA5.b) S&#x27;ha definit l&#x27;àmbit d&#x27;aplicació de l&#x27;informe pericial.<br>CA5.c) S&#x27;han documentat els antecedents.<br>CA5.d) S&#x27;han recopilat les normes legals i els reglaments complits en l&#x27;anàlisi forense realitzada.<br>CA5.e) S&#x27;han recollit els requisits establits pel client.<br>CA5.f) S&#x27;han inclòs les conclusions i la seua justificació.</td></tr></tbody>
+</table>
+
+</div>
+
+<h2 id="continguts">Continguts<a class="headerlink" href="#continguts" title="Permanent link">&para;</a></h2>
+<p>Els continguts s'organitzen funcionalment al servici dels RA. Les ferramentes concretes poden variar, però s'han de mantindre les funcions professionals estables: preservació, adquisició, anàlisi, documentació, cadena de custòdia i comunicació de conclusions.</p>
+<div class="table-ra-compact">
+
+<table class="pdf-table">
+<thead><tr><th>Continguts</th></tr></thead>
+<tbody><tr><td>C1: Aplicació de metodologies d&#x27;anàlisi forense<br>Identificació dels dispositius que s&#x27;han d&#x27;analitzar.<br>Recol·lecció d&#x27;evidències sobre un escenari controlat.<br>Anàlisi de la línia temporal (TimeStamp).<br>Anàlisi de volatilitat i extracció d&#x27;informació amb ferramentes especialitzades.<br>Anàlisi de registres i ferramentes d&#x27;ús habitual.</td></tr>
+<tr><td>C2: Realització d&#x27;anàlisis forenses en dispositius mòbils<br>Mètodes per a l&#x27;extracció d&#x27;evidències.<br>Ferramentes de mercat i alternatives d&#x27;ús educatiu.</td></tr>
+<tr><td>C3: Realització d&#x27;anàlisis forenses en el núvol<br>Núvol privat, públic i híbrid.<br>Reptes legals, organitzatius i tècnics particulars.<br>Estratègies d&#x27;anàlisi forense en el núvol.<br>Fases rellevants del procés forense en el núvol.<br>Ferramentes d&#x27;anàlisi i registres proporcionats pels proveïdors.</td></tr>
+<tr><td>C4: Realització d&#x27;anàlisis forenses en IoT<br>Identificació dels dispositius que s&#x27;han d&#x27;analitzar.<br>Adquisició i extracció de les evidències.<br>Anàlisi manual i automatitzada.<br>Documentació del procés i establiment de la línia temporal.<br>Manteniment de la cadena de custòdia.<br>Elaboració, presentació i exposició de conclusions.</td></tr>
+<tr><td>C5: Documentació i elaboració d&#x27;informes forenses<br>Full d&#x27;identificació i índex de la memòria.<br>Objecte i justificació de l&#x27;informe pericial.<br>Abast i resum executiu.<br>Antecedents, normes i referències.<br>Definicions, abreviatures i requisits.<br>Anàlisi de solucions i resum justificat de conclusions.<br>Annexos.</td></tr></tbody>
+</table>
+
+</div>
+
+<p>La programació d'aula concretarà les imatges forenses, sistemes operatius, dispositius, proveïdors <em>cloud</em> i ferramentes d'anàlisi que s'empraran en cada curs, sempre en entorns autoritzats i controlats.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copiat al porta-retalls","clipboard.copy":"Còpia al porta-retalls","search.result.more.one":"1 més en aquesta pàgina","search.result.more.other":"# més en aquesta pàgina","search.result.none":"Cap document coincideix","search.result.one":"1 document coincident","search.result.other":"# documents coincidents","search.result.placeholder":"Escriu per a començar a cercar","search.result.term.missing":"Desaparegut","select.version":"Selecciona la versió"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e886cdf1.min.js"></script>
+      
+    
+  </body>
+</html>
