@@ -1,6 +1,7 @@
 venv
 # Carpeta de la documentació generada per MkDocs
 /site/
+**/site/
 **/site-zensical/
 /zensical_full_doc/
 
@@ -36,6 +37,7 @@ __pycache__/
 # Excepte els de la carpeta PDFs
 !PDFs/
 !PDFs/**/*.pdf
+/PDFs/generats/
 
 # Fitxers temporals de test o generació automàtica
 output*
