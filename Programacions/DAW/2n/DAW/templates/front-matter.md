@@ -4,6 +4,7 @@ titlepage: true
 subtitle: PD DAW
 author:
   - Guillermo Vidal Frasquet
+  - Mª Esperanza Micó Méndez
 lang: ca
 toc: true
 toc-own-page: true
