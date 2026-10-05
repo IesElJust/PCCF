@@ -1,0 +1,597 @@
+{
+  "metadades_modul": [
+    [
+      "Camp",
+      "Valor"
+    ],
+    [
+      "Codi",
+      "5074"
+    ],
+    [
+      "Abreviatura",
+      "SBD"
+    ],
+    [
+      "Nom oficial",
+      "Sistemes de Big Data"
+    ],
+    [
+      "Hores RD",
+      "55"
+    ],
+    [
+      "Hores PCCE",
+      "90"
+    ],
+    [
+      "ECTS",
+      "6"
+    ],
+    [
+      "Projectes clau",
+      "P2, P3, P5"
+    ],
+    [
+      "Observacions",
+      "Mòdul de dades, persistència, streaming i BI"
+    ]
+  ],
+  "mapa_ra_oficial_vs_funcional": [
+    [
+      "RA oficial",
+      "Formulació resumida",
+      "Blocs funcionals locals",
+      "Projectes clau",
+      "Evidència tipus"
+    ],
+    [
+      "RA1",
+      "Integra, processa i analitza informació",
+      "MongoDB i NoSQL\nCassandra i distribució\nKafka i streaming\nSpark",
+      "P2, P3, P5",
+      "Pràctica guiada i job Spark"
+    ],
+    [
+      "RA2",
+      "Configura quadres de comandament",
+      "BI i visualització",
+      "P2, P5",
+      "Dashboard Power BI"
+    ],
+    [
+      "RA3",
+      "Gestiona i emmagatzema dades en grans conjunts",
+      "MongoDB i NoSQL\nCassandra i distribució\nKafka i streaming",
+      "P1, P2, P3, P4, P5",
+      "Exercici de disseny i flux operatiu"
+    ],
+    [
+      "RA4",
+      "Aplica eines per a visualització i explotació",
+      "Spark\nBI i visualització\nVector DB",
+      "P1, P2, P5",
+      "Dashboard i demo per a RAG"
+    ]
+  ],
+  "projectes_i_evidencies": [
+    [
+      "Projecte",
+      "Pes del mòdul",
+      "Aportació principal",
+      "Evidències"
+    ],
+    [
+      "P1 Helpdesk",
+      "mitjà",
+      "Persistència documental i vectorial",
+      "Model documental\nDemo vector DB"
+    ],
+    [
+      "P2 Predicció",
+      "alt",
+      "Modelatge de dades i BI",
+      "Dashboard\nEstructura de dades\nConsultes"
+    ],
+    [
+      "P3 AgroSense",
+      "alt",
+      "Kafka, dades en flux i estructuració d'events",
+      "Flux operatiu\nEsquema de missatge"
+    ],
+    [
+      "P4 ClinicFlow",
+      "mitjà",
+      "Persistència i traçabilitat",
+      "Model de dades\nTraça de procés"
+    ],
+    [
+      "P5 Port València",
+      "alt",
+      "Dades, streaming, BI i vector DB",
+      "Arquitectura de dades\nDashboard\nDemo vectorial"
+    ]
+  ],
+  "contribucio_ra_cp": [
+    [
+      "RA",
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "ñ",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s"
+    ],
+    [
+      "RA1",
+      "",
+      "x",
+      "x",
+      "",
+      "",
+      "",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "",
+      "x",
+      "x"
+    ],
+    [
+      "RA2",
+      "",
+      "x",
+      "x",
+      "",
+      "",
+      "",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "",
+      "x",
+      "x"
+    ],
+    [
+      "RA3",
+      "",
+      "x",
+      "x",
+      "",
+      "",
+      "",
+      "",
+      "x",
+      "x",
+      "x",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "x",
+      "x"
+    ],
+    [
+      "RA4",
+      "",
+      "x",
+      "x",
+      "",
+      "",
+      "",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "x",
+      "",
+      "x",
+      "",
+      "x",
+      "x"
+    ]
+  ],
+  "ra_ca": [
+    [
+      "Resultat d'Aprenentatge",
+      "Criteris d'Avaluació"
+    ],
+    [
+      "RA1. Aplica tècniques d’anàlisi de dades que integren, processen i analitzen la informació, adaptant i implementant sistemes que les utilitzen.",
+      "CA1.a) S’han identificat conceptes bàsics de matemàtica discreta, lògica algorísmica i complexitat computacional, i la seua aplicació al tractament automàtic de la informació mitjançant sistemes computacionals.\nCA1.b) S’ha extret de manera automàtica informació i coneixement a partir de grans volums de dades.\nCA1.c) S’han combinat diferents fonts i tipus de dades.\nCA1.d) S’ha construït un conjunt de dades complexes i se n’han establit les relacions.\nCA1.e) S’han establit objectius i prioritats, així com la seqüenciació i l’organització del temps de realització.\nCA1.f) S’han seleccionat i integrat sistemes d’informació que satisfan les necessitats del problema.\nCA1.g) S’han determinat criteris de cost i qualitat necessaris per a l’eficàcia i l’eficiència de la implementació d’un sistema Big Data."
+    ],
+    [
+      "RA2. Configura quadres de comandament en diferents entorns computacionals utilitzant tècniques d’anàlisi de dades.",
+      "CA2.a) S’han classificat diferents biblioteques i implementacions de les tècniques de representació de la informació.\nCA2.b) S’ha encreuat la informació sobre l’objectiu que es vol aconseguir i la naturalesa de les dades.\nCA2.c) S’ha elaborat un quadre de comandament utilitzant tècniques senzilles.\nCA2.d) S’han utilitzat tècniques predictives complexes per a anticipar-se al que puga ocórrer.\nCA2.e) S’ha avaluat l’impacte de l’anàlisi de dades en la consecució dels objectius proposats."
+    ],
+    [
+      "RA3. Gestiona i emmagatzema dades, facilitant la cerca de respostes en grans conjunts de dades.",
+      "CA3.a) S’han extret i emmagatzemat dades de diverses fonts per a ser tractades en diferents escenaris.\nCA3.b) S’ha fixat l’objectiu d’extraure valor de les dades, per a la qual cosa cal disposar de tecnologies eficients.\nCA3.c) S’ha comprovat que la revolució digital exigeix poder emmagatzemar i processar ingents quantitats de dades de diferent tipus i descobrir-ne el valor.\nCA3.d) S’han desenvolupat sistemes de gestió, emmagatzematge i processament de grans volums de dades de manera eficient i segura, tenint en compte la normativa existent.\nCA3.e) S’han utilitzat habilitats científiques en entorns de treball multidisciplinaris."
+    ],
+    [
+      "RA4. Aplica eines per a la visualització de dades utilitzades en les solucions Big Data, facilitant les tasques d’anàlisi i presentació de resultats.",
+      "CA4.a) S’han examinat diferents escenaris i tipologies de dades no estructurades.\nCA4.b) S’ha implantat l’aplicació de la BI (`Business Intelligence`) per a l’extracció de valor.\nCA4.c) S’ha reconegut la importància d’emmagatzemar grans volums de dades de manera distribuïda i redundant en un clúster de màquines.\nCA4.d) S’han determinat les diferències en l’entorn d’aplicacions relacionades que faciliten el processament de dades de manera ràpida, eficient i eficaç.\nCA4.e) S’ha comprovat la manera de programar i processar automàticament l’estructura de dades.\nCA4.f) S’han valorat les diferents formes de visualitzar les dades que interesse representar gràficament, facilitant així les tasques d’anàlisi i presentació de resultats."
+    ]
+  ],
+  "continguts": [
+    [
+      "Continguts"
+    ],
+    [
+      "C1: Aplicació de tècniques d’integració, processament i anàlisi d’informació:\n- Conceptes bàsics de matemàtica discreta, lògica algorísmica i complexitat computacional per a l’anàlisi de dades.\n- Tècniques i processos d’extracció de la informació de les dades.\n- Modelatge, raonament i resolució de problemes.\n- Anàlisi en temps real.\n- Costos i qualitat associats al procés d’anàlisi de la informació."
+    ],
+    [
+      "C2: Configuració de quadres de comandament en entorns computacionals:\n- Tècniques de representació de la informació. Biblioteques i implementacions. Estructuració de dades. Objectius a complir.\n- Quadre de comandament: fonaments.\n- Mètriques.\n- Principals mètodes i algorismes en la mineria de dades. Models `SEMMA` i `CRISP-DM`, entre altres.\n- Fases dels models. Valoració. Interpretació. Desplegament."
+    ],
+    [
+      "C3: Gestió i emmagatzematge de dades. Cerca de respostes en grans conjunts de dades:\n- Sistemes de gestió i emmagatzematge.\n- Importació: `Flume`, `Sqoop`.\n- Integració de dades.\n- Programació: `R` i `Python`."
+    ],
+    [
+      "C4: Aplicació d’eines per a la visualització de dades:\n- Dades no estructurades: fonts i tipologia.\n- Intel·ligència artificial en l’anàlisi de dades.\n- Clúster de màquines: informació distribuïda i redundant.\n- Eines de visualització de dades: `QlikView`, `QlikSense`, `Tableau`, `Power BI`, `Domo`, `Pentaho`, `MicroStrategy`, `Business Objects`, `RJMetrics`, `Klipfolio`, entre altres.\n- Tendències de visualització de dades."
+    ]
+  ],
+  "sequenciacio_up_ra": [
+    [
+      "UP",
+      "Títol",
+      "RA1",
+      "RA2",
+      "RA3",
+      "RA4",
+      "Pes",
+      "Hores"
+    ],
+    [
+      "1",
+      "MongoDB i NoSQL",
+      "X",
+      "",
+      "X",
+      "",
+      "13",
+      "12"
+    ],
+    [
+      "2",
+      "Cassandra i distribució",
+      "X",
+      "",
+      "X",
+      "",
+      "13",
+      "12"
+    ],
+    [
+      "3",
+      "Kafka i streaming",
+      "X",
+      "",
+      "X",
+      "",
+      "22",
+      "20"
+    ],
+    [
+      "4",
+      "Spark",
+      "X",
+      "",
+      "",
+      "X",
+      "20",
+      "18"
+    ],
+    [
+      "5",
+      "BI i visualització",
+      "",
+      "X",
+      "",
+      "X",
+      "20",
+      "18"
+    ],
+    [
+      "6",
+      "Vector DB",
+      "",
+      "",
+      "",
+      "X",
+      "12",
+      "10"
+    ],
+    [
+      "",
+      "Pes dels RA/Totals",
+      "30",
+      "20",
+      "25",
+      "25",
+      "100",
+      "90"
+    ]
+  ],
+  "sequenciacio_up_continguts": [
+    [
+      "UP",
+      "Títol",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    [
+      "1",
+      "MongoDB i NoSQL",
+      "X",
+      "",
+      "X",
+      ""
+    ],
+    [
+      "2",
+      "Cassandra i distribució",
+      "X",
+      "",
+      "X",
+      ""
+    ],
+    [
+      "3",
+      "Kafka i streaming",
+      "X",
+      "",
+      "X",
+      ""
+    ],
+    [
+      "4",
+      "Spark",
+      "X",
+      "",
+      "",
+      "X"
+    ],
+    [
+      "5",
+      "BI i visualització",
+      "",
+      "X",
+      "",
+      "X"
+    ],
+    [
+      "6",
+      "Vector DB",
+      "",
+      "",
+      "",
+      "X"
+    ]
+  ],
+  "temporalització": [
+    [
+      "UP",
+      "Títol",
+      "Avaluació",
+      "Setmanes"
+    ],
+    [
+      "1",
+      "MongoDB i NoSQL",
+      "1",
+      "S1-S3 (oct)"
+    ],
+    [
+      "2",
+      "Cassandra i distribució",
+      "1",
+      "S4-S6 (oct-nov)"
+    ],
+    [
+      "3",
+      "Kafka i streaming",
+      "1",
+      "S7-S13 (nov-gen)"
+    ],
+    [
+      "4",
+      "Spark",
+      "2",
+      "S16-S20 (feb-mar)"
+    ],
+    [
+      "5",
+      "BI i visualització",
+      "2",
+      "S21-S26 (mar-maig)"
+    ],
+    [
+      "6",
+      "Vector DB",
+      "2",
+      "S27-S29 (maig-juny)"
+    ]
+  ],
+  "avaluacio": [
+    [
+      "Resultat d'Aprenentatge",
+      "Pond. Parcial",
+      "Pond. Total"
+    ],
+    [
+      "RA1. Aplica tècniques d’anàlisi de dades que integren, processen i analitzen la informació, adaptant i implementant sistemes que les utilitzen.",
+      "",
+      "30"
+    ],
+    [
+      "CA1.a) S’han identificat conceptes bàsics de matemàtica discreta, lògica algorísmica i complexitat computacional, i la seua aplicació al tractament automàtic de la informació mitjançant sistemes computacionals.",
+      "4",
+      ""
+    ],
+    [
+      "CA1.b) S’ha extret de manera automàtica informació i coneixement a partir de grans volums de dades.",
+      "5",
+      ""
+    ],
+    [
+      "CA1.c) S’han combinat diferents fonts i tipus de dades.",
+      "5",
+      ""
+    ],
+    [
+      "CA1.d) S’ha construït un conjunt de dades complexes i se n’han establit les relacions.",
+      "4",
+      ""
+    ],
+    [
+      "CA1.e) S’han establit objectius i prioritats, així com la seqüenciació i l’organització del temps de realització.",
+      "4",
+      ""
+    ],
+    [
+      "CA1.f) S’han seleccionat i integrat sistemes d’informació que satisfan les necessitats del problema.",
+      "4",
+      ""
+    ],
+    [
+      "CA1.g) S’han determinat criteris de cost i qualitat necessaris per a l’eficàcia i l’eficiència de la implementació d’un sistema Big Data.",
+      "4",
+      ""
+    ],
+    [
+      "RA2. Configura quadres de comandament en diferents entorns computacionals utilitzant tècniques d’anàlisi de dades.",
+      "",
+      "20"
+    ],
+    [
+      "CA2.a) S’han classificat diferents biblioteques i implementacions de les tècniques de representació de la informació.",
+      "4",
+      ""
+    ],
+    [
+      "CA2.b) S’ha encreuat la informació sobre l’objectiu que es vol aconseguir i la naturalesa de les dades.",
+      "4",
+      ""
+    ],
+    [
+      "CA2.c) S’ha elaborat un quadre de comandament utilitzant tècniques senzilles.",
+      "4",
+      ""
+    ],
+    [
+      "CA2.d) S’han utilitzat tècniques predictives complexes per a anticipar-se al que puga ocórrer.",
+      "4",
+      ""
+    ],
+    [
+      "CA2.e) S’ha avaluat l’impacte de l’anàlisi de dades en la consecució dels objectius proposats.",
+      "4",
+      ""
+    ],
+    [
+      "RA3. Gestiona i emmagatzema dades, facilitant la cerca de respostes en grans conjunts de dades.",
+      "",
+      "25"
+    ],
+    [
+      "CA3.a) S’han extret i emmagatzemat dades de diverses fonts per a ser tractades en diferents escenaris.",
+      "5",
+      ""
+    ],
+    [
+      "CA3.b) S’ha fixat l’objectiu d’extraure valor de les dades, per a la qual cosa cal disposar de tecnologies eficients.",
+      "5",
+      ""
+    ],
+    [
+      "CA3.c) S’ha comprovat que la revolució digital exigeix poder emmagatzemar i processar ingents quantitats de dades de diferent tipus i descobrir-ne el valor.",
+      "5",
+      ""
+    ],
+    [
+      "CA3.d) S’han desenvolupat sistemes de gestió, emmagatzematge i processament de grans volums de dades de manera eficient i segura, tenint en compte la normativa existent.",
+      "5",
+      ""
+    ],
+    [
+      "CA3.e) S’han utilitzat habilitats científiques en entorns de treball multidisciplinaris.",
+      "5",
+      ""
+    ],
+    [
+      "RA4. Aplica eines per a la visualització de dades utilitzades en les solucions Big Data, facilitant les tasques d’anàlisi i presentació de resultats.",
+      "",
+      "25"
+    ],
+    [
+      "CA4.a) S’han examinat diferents escenaris i tipologies de dades no estructurades.",
+      "4",
+      ""
+    ],
+    [
+      "CA4.b) S’ha implantat l’aplicació de la BI (`Business Intelligence`) per a l’extracció de valor.",
+      "4",
+      ""
+    ],
+    [
+      "CA4.c) S’ha reconegut la importància d’emmagatzemar grans volums de dades de manera distribuïda i redundant en un clúster de màquines.",
+      "4",
+      ""
+    ],
+    [
+      "CA4.d) S’han determinat les diferències en l’entorn d’aplicacions relacionades que faciliten el processament de dades de manera ràpida, eficient i eficaç.",
+      "4",
+      ""
+    ],
+    [
+      "CA4.e) S’ha comprovat la manera de programar i processar automàticament l’estructura de dades.",
+      "4",
+      ""
+    ],
+    [
+      "CA4.f) S’han valorat les diferents formes de visualitzar les dades que interesse representar gràficament, facilitant així les tasques d’anàlisi i presentació de resultats.",
+      "5",
+      ""
+    ]
+  ]
+}
