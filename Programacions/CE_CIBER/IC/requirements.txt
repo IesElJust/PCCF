@@ -1,0 +1,4 @@
+zensical==0.0.46
+weasyprint==68.1
+lxml==6.0.2
+tomli==2.4.1 ; python_version < "3.11"

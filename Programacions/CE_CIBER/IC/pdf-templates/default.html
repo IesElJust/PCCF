@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  $for(css)$
+  <link rel="stylesheet" href="$css$" />
+  $endfor$
+  <style>
+    :root {
+      --pdf-page-background: url("$if(page-background)$$page-background$$else$img/fondo.png$endif$");
+      --pdf-titlepage-background: url("$if(titlepage-background)$$titlepage-background$$else$img/portada.png$endif$");
+    }
+  </style>
+</head>
+<body$if(titlepage)$ class="has-titlepage"$endif$>
+  $if(title)$
+  <header id="title-block-header">
+    <h1 class="title">$title$</h1>
+    $if(subtitle)$
+    <p class="subtitle">$subtitle$</p>
+    $endif$
+    $if(author)$
+    <div class="author-block">
+      $for(author)$
+      <p class="author">$author$</p>
+      $endfor$
+    </div>
+    $endif$
+  </header>
+  $endif$
+  $if(toc)$
+  <nav id="$idprefix$TOC">
+    <h2>$toc-title$</h2>
+    $table-of-contents$
+  </nav>
+  $endif$
+  $body$
+</body>
+</html>

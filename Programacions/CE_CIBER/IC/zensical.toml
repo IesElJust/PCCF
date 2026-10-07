@@ -1,22 +1,20 @@
 [project]
-site_name = "Programació didàctica - Incidents de ciberseguretat"
-site_url = "https://example.invalid/ceti-5021-incidents-ciberseguretat/"
+site_name = "Programació didàctica - Posta en Producció Segura"
+site_url = "https://example.invalid/ceti-5023-posta-produccio-segura/"
 extra_css = ["stylesheets/extra.css"]
 
 [project.theme]
 variant = "classic"
 language = "ca"
-logo = "img/logo.png"
+custom_dir = "theme-overrides"
 
 [[project.theme.palette]]
 scheme = "default"
-primary = "deep purple"
 toggle.icon = "lucide/sun"
 toggle.name = "Canvia a mode fosc"
 
 [[project.theme.palette]]
 scheme = "slate"
-primary = "deep purple"
 toggle.icon = "lucide/moon"
 toggle.name = "Canvia a mode clar"
 
@@ -26,7 +24,7 @@ nav = [
   { "01 Identificació" = "1.Identificacio.md" },
   { "02 Marc normatiu" = "2.Marc_normatiu.md" },
   { "03 Perfil competencial" = "3.contribucio_ra.md" },
-  { "04 RA, CA i continguts" = "4.RAs_CAs_Continguts.md" },
+  { "04 RA, CE i continguts" = "4.RAs_CAs_Continguts.md" },
   { "05 Seqüenciació" = "5.esquema_general_up.md" },
   { "06 Metodologia" = "6.Metodologia.md" },
   { "07 Recursos" = "7.Recursos.md" },
@@ -36,6 +34,3 @@ nav = [
   { "11 Complementàries" = "11.Activitats_Complementaries.md" },
   { "12 Pràctica docent" = "12.Procediments_Avaluacio_PD.md" }
 ]
-
-[pccf.tables]
-ods_path = "PD_IC.ods"
